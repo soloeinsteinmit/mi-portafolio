@@ -63,6 +63,8 @@ export const ProjectModal = ({
             muted
             loop
             playsInline
+            preload="none"
+            poster={imgSrc}
           >
             <source src={videoSrc} type="video/mp4" />
             Your browser does not support the video tag.
