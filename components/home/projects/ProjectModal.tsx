@@ -15,6 +15,9 @@ interface Props {
   projectLink: string;
   tech: string[];
   modalContent: JSX.Element;
+  videoSrc?: string;
+  status?: string;
+  disclaimer?: string;
 }
 
 export const ProjectModal = ({
@@ -26,6 +29,9 @@ export const ProjectModal = ({
   title,
   code,
   tech,
+  videoSrc,
+  status,
+  disclaimer,
 }: Props) => {
   useEffect(() => {
     const body = document.querySelector("body");
@@ -49,22 +55,40 @@ export const ProjectModal = ({
         onClick={(e) => e.stopPropagation()}
         className={styles.modalCard}
       >
-        <Image
-          priority
-          src={imgSrc}
-          alt={`An image of the ${title} project.`}
-          width={500}
-          height={400}
-          className={styles.modalImage}
+        {videoSrc ? (
+          <video
+            className={styles.modalImage}
+            controls
+            autoPlay
+            muted
+            loop
+            playsInline
+          >
+            <source src={videoSrc} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          <Image
+            priority
+            src={imgSrc}
+            alt={`An image of the ${title} project.`}
+            width={500}
+            height={400}
+            className={styles.modalImage}
           />
-        {/* <img
-          className={styles.modalImage}
-          src={imgSrc}
-          alt={`An image of the ${title} project.`}
-        /> */}
+        )}
         <div className={styles.modalContent}>
-          <h4>{title}</h4>
+          <div className={styles.modalHeader}>
+            <h4>{title}</h4>
+            {status && <span className={styles.statusBadge}>{status}</span>}
+          </div>
           <div className={styles.modalTech}>{tech.join(" - ")}</div>
+
+          {disclaimer && (
+            <div className={styles.disclaimer}>
+              <p>{disclaimer}</p>
+            </div>
+          )}
 
           <div className={styles.suppliedContent}>{modalContent}</div>
 
@@ -73,12 +97,24 @@ export const ProjectModal = ({
               Project Links<span>.</span>
             </p>
             <div className={styles.links}>
-              <Link target="_blank" rel="nofollow" href={code}>
-                <AiFillGithub /> source code
-              </Link>
-              <Link target="_blank" rel="nofollow" href={projectLink}>
-                <AiOutlineExport /> live project
-              </Link>
+              {code === "#" ? (
+                <span className={styles.disabledLink}>
+                  <AiFillGithub /> source code
+                </span>
+              ) : (
+                <Link target="_blank" rel="nofollow" href={code}>
+                  <AiFillGithub /> source code
+                </Link>
+              )}
+              {projectLink === "#" ? (
+                <span className={styles.disabledLink}>
+                  <AiOutlineExport /> live project
+                </span>
+              ) : (
+                <Link target="_blank" rel="nofollow" href={projectLink}>
+                  <AiOutlineExport /> live project
+                </Link>
+              )}
             </div>
           </div>
         </div>

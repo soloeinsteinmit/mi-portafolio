@@ -15,6 +15,9 @@ interface Props {
   tech: string[];
   title: string;
   code: string;
+  videoSrc?: string;
+  status?: string;
+  disclaimer?: string;
 }
 
 export const Project = ({
@@ -25,6 +28,9 @@ export const Project = ({
   title,
   code,
   tech,
+  videoSrc,
+  status,
+  disclaimer,
 }: Props) => {
   const [hovered, setHovered] = useState(false);
 
@@ -87,15 +93,28 @@ export const Project = ({
           <Reveal width="100%">
             <div className={styles.projectTitle}>
               <h4>{title}</h4>
+              {status && <span className={styles.statusBadge}>{status}</span>}
               <div className={styles.projectTitleLine} />
 
-              <Link href={code} target="_blank" rel="nofollow">
-                <AiFillGithub size="2.8rem" />
-              </Link>
+              {code === "#" ? (
+                <span className={styles.disabledIcon}>
+                  <AiFillGithub size="2.8rem" />
+                </span>
+              ) : (
+                <Link href={code} target="_blank" rel="nofollow">
+                  <AiFillGithub size="2.8rem" />
+                </Link>
+              )}
 
-              <Link href={projectLink} target="_blank" rel="nofollow">
-                <RxExternalLink size="2.8rem" />
-              </Link>
+              {projectLink === "#" ? (
+                <span className={styles.disabledIcon}>
+                  <RxExternalLink size="2.8rem" />
+                </span>
+              ) : (
+                <Link href={projectLink} target="_blank" rel="nofollow">
+                  <RxExternalLink size="2.8rem" />
+                </Link>
+              )}
             </div>
           </Reveal>
           <Reveal>
@@ -118,6 +137,9 @@ export const Project = ({
         title={title}
         code={code}
         tech={tech}
+        videoSrc={videoSrc}
+        status={status}
+        disclaimer={disclaimer}
       />
     </>
   );

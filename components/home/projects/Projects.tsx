@@ -54,6 +54,89 @@ const projects = [
     ),
   },
   {
+    title: "Moremi Bio - Drug Discovery Platform",
+    imgSrc: "/project-imgs/biokit_thumnail.png",
+    projectLink: "#",
+    code: "#",
+    tech: ["Python", "Docker", "FastAPI", "Celery", "RabbitMQ", "Redis", "3Dmol.js", "Next.js"],
+    description:
+      "Containerized bioinformatics platform processing 20,000+ molecules, co-authored 4 research publications in 2025.",
+    videoSrc: "/project-imgs/biokit.mp4",
+    status: "In Development",
+    disclaimer:
+      "⚠️ This platform is currently in development and internal testing/use. The demonstration shown represents a snapshot of the system as I developed it during my time with the company. Source code is proprietary and cannot be shared publicly. You can contact minoHealth AI Labs for possible collaborations.",
+    modalContent: (
+      <>
+        <p>
+          Developed a high-performance, containerized bioinformatics ecosystem that unifies 
+          over 20 heterogeneous scientific tools (written in C++, Python, Java, & Perl) into a seamless 
+          drug discovery pipeline. By leveraging <strong>Docker</strong> and <strong>FastAPI</strong>, 
+          I created a reproducible environment that eliminates dependency conflicts and 
+          standardizes complex computational workflows.
+        </p>
+        <p>
+          To handle the intensive computational demands of molecular dynamics simulation and other complex bioinformatics workflows, I engineered a distributed task orchestration layer using <strong>Celery</strong>, <strong>RabbitMQ</strong>, and <strong>Redis</strong>. This system dynamically schedules long-running simulations across scalable worker nodes, allowing for the concurrent processing of massive datasets without bottlenecking the user experience.
+        </p>
+        <p>
+          The platform bridges the gap between raw data and scientific insight through 
+          integrated <strong>3Dmol.js</strong> visualizations. This allows researchers to 
+          interactively explore protein-ligand binding sites and simulation trajectories 
+          directly in the browser, providing a powerful interface for real-time analysis of 
+          drug-target interactions.
+        </p>
+        <p>
+          This infrastructure has already processed over <strong>20,000 molecules </strong> 
+          and served as the computational foundation for <strong>4 research publications </strong> 
+          in 2025, demonstrating its reliability and impact in modern bioinformatics research.
+        </p>
+      </>
+    ),
+  },
+      {
+    title: "Moremi Agents",
+    imgSrc: "/project-imgs/moremi.png",
+    code: "#",
+    projectLink: "https://moremi.ai",
+    tech: [
+      "Python",
+      "Agentic AI",
+      "Docker",
+      "FastAPI",
+      "LLMs",
+      "Bioinformatics Tools",
+      "Medical Imaging",
+    ],
+    description:
+      "A suite of autonomous AI agents designed for bioinformatics and clinical research workflows, real-time medical search and medical image analysis.",
+    modalContent: (
+      <>
+        <p>
+          I developed the <strong>Moremi Bio Co-Researcher Agent</strong> as a public-facing, 
+          security-hardened implementation of my bioinformatics ecosystem. It functions as an 
+          autonomous scientific partner, utilizing a tool-driven architecture to execute complex 
+          computational biology workflows using the same containerized infrastructure of 20+ 
+          specialized tools.
+        </p>
+        <p>
+          <strong>MoremiSearch</strong> is a powerful, real-time web search tool
+          that allows the AI Agent to access and analyze information across all
+          domains. While it can perform any AI search, it is uniquely optimized
+          for clinical applications, helping conduct complex medical research
+          with unprecedented speed, including the latest research on drug
+          specifications, clinical trial data, and emerging treatment protocols.
+        </p>
+        <p>
+          <strong>Moremi AI Agent</strong> takes the platform further by using
+          specialized tools to provide the best possible response to complex
+          queries. A key feature is its ability to generate detailed,
+          preliminary medical reports from medical images such as X-rays, MRIs,
+          and CT scans, streamlining workflows and providing immediate,
+          data-driven insights that accelerate the diagnostic process.
+        </p>
+      </>
+    ),
+  },
+  {
     title: "Quantitative XAU/USD Session Strategy",
     imgSrc: "/project-imgs/xauusd.jpg",
     code: "https://github.com/soloeinsteinmit/Quantitative-XAUUSD-Strategy",
@@ -122,34 +205,7 @@ const projects = [
       </>
     ),
   },
-  {
-    title: "Sonu AI - Plant Disease Detection",
-    imgSrc: "/project-imgs/sonu.png",
-    code: "https://github.com/soloeinsteinmit/sonu-ai",
-    projectLink: "https://sonu-ai.vercel.app",
-    tech: ["Next.js", "ONNX", "Computer Vision", "PWA", "Tailwind", "Leaflet"],
-    description:
-      "Offline-capable PWA for crop disease detection achieving 96% accuracy, built in 5 days for Ghanaian farmers.",
-    modalContent: (
-      <>
-        <p>
-          Developed an AI-powered offline Progressive Web App for crop disease
-          detection and treatment guidance, specifically optimized for Ghanaian
-          farmers with limited internet connectivity.
-        </p>
-        <p>
-          Implemented ONNX for on-device inference enabling full offline
-          functionality, integrated Leaflet for outbreak mapping visualization,
-          and built a responsive mobile UI with Next.js and Tailwind CSS.
-        </p>
-        <p>
-          Achieved 96% accuracy with complete offline capability and deployed
-          live within 5 days as a hackathon project. Featured on Devpost.
-        </p>
-      </>
-    ),
-  },
-  {
+    {
     title: "DS.AlgoDeck - Interactive Learning Platform",
     imgSrc: "/project-imgs/dsalgo.png",
     code: "https://github.com/soloeinsteinmit/ds-algo-deck-v010",
@@ -184,48 +240,32 @@ const projects = [
     ),
   },
   {
-    title: "Moremi Agents",
-    imgSrc: "/project-imgs/moremi.png",
-    code: "#",
-    projectLink: "https://moremi.ai",
-    tech: [
-      "Python",
-      "Agentic AI",
-      "Docker",
-      "FastAPI",
-      "LLMs",
-      "Bioinformatics Tools",
-      "Medical Imaging",
-    ],
+    title: "Sonu AI - Plant Disease Detection",
+    imgSrc: "/project-imgs/sonu.png",
+    code: "https://github.com/soloeinsteinmit/sonu-ai",
+    projectLink: "https://sonu-ai.vercel.app",
+    tech: ["Next.js", "ONNX", "Computer Vision", "PWA", "Tailwind", "Leaflet"],
     description:
-      "Autonomous research agent powering applied bioinformatics workflows on moremi.ai, featuring real-time clinical search and medical image analysis.",
+      "Offline-capable PWA for crop disease detection achieving 96% accuracy, built in 5 days for Ghanaian farmers.",
     modalContent: (
       <>
         <p>
-          Designed <strong>Moremi Bio Co-Researcher Agent</strong>, a
-          constrained and security-hardened public deployment version of 
-          <strong>Moremi Bio Agent</strong> on the <a href="https://moremi.ai"> <u><em>moremi.ai</em></u></a> 
-          platform designed to support applied bioinformatics and computational biology research workflows. 
-          It uses a tool-driven research system to conduct independent scientific exploration and 
-          leverages the same unified 20+ containerized bioinformatics and computational biology tools infrastructure.
+          Developed an AI-powered offline Progressive Web App for crop disease
+          detection and treatment guidance, specifically optimized for Ghanaian
+          farmers with limited internet connectivity.
         </p>
         <p>
-          <strong>MoremiSearch</strong> is a powerful, real-time web search tool
-          that allows the AI Agent to access and analyze information across all
-          domains. While it can perform any AI search, it is uniquely optimized
-          for clinical applications, helping conduct complex medical research
-          with unprecedented speed, including the latest research on drug
-          specifications, clinical trial data, and emerging treatment protocols.
+          Implemented ONNX for on-device inference enabling full offline
+          functionality, integrated Leaflet for outbreak mapping visualization,
+          and built a responsive mobile UI with Next.js and Tailwind CSS.
         </p>
         <p>
-          <strong>Moremi AI Agent</strong> takes the platform further by using
-          specialized tools to provide the best possible response to complex
-          queries. A key feature is its ability to generate detailed,
-          preliminary medical reports from medical images such as X-rays, MRIs,
-          and CT scans, streamlining workflows and providing immediate,
-          data-driven insights that accelerate the diagnostic process.
+          Achieved 96% accuracy with complete offline capability and deployed
+          live within 5 days as a hackathon project. Featured on Devpost.
         </p>
       </>
     ),
   },
+
+
 ];
