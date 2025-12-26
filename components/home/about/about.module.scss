@@ -1,0 +1,47 @@
+.about {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.aboutText {
+  margin-bottom: 2rem;
+  font-weight: 400;
+  line-height: 1.7;
+  font-size: var(--text-md);
+  color: var(--text-secondary);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.linksText {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: var(--text-sm);
+  color: var(--brand);
+}
+
+.highlightFirstLetter:first-letter {
+  background: linear-gradient(135deg, var(--brand), var(--brand-accent));
+  padding: 1.2rem;
+  border-radius: 0.8rem;
+
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--background);
+
+  margin-right: 0.8rem;
+
+  float: left;
+}

@@ -1,0 +1,31 @@
+.stats {
+  position: relative;
+}
+
+.statColumn {
+  h4 {
+    display: flex;
+    align-items: center;
+
+    margin-bottom: 2rem;
+    span {
+      font-size: var(--text-md);
+      font-weight: 600;
+      position: relative;
+      margin-left: 1rem;
+      color: var(--text);
+    }
+  }
+}
+
+.statGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+
+  margin-bottom: 4rem;
+  
+  @media (max-width: 768px) {
+    gap: 0.6rem;
+  }
+}

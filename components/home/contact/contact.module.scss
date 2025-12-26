@@ -1,0 +1,65 @@
+.contactWrapper {
+  max-width: 700px;
+  margin: auto;
+  padding: 6rem 3rem;
+  text-align: center;
+  background-color: var(--background-light);
+  border-radius: 1.2rem;
+}
+
+.contactTitle {
+  font-size: var(--text-2xl);
+  text-align: center;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 2rem;
+
+  span {
+    color: var(--brand);
+  }
+
+  @media (max-width: 768px) {
+    font-size: var(--text-xl);
+  }
+}
+
+.contactCopy {
+  text-align: center;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0 0 3rem 0;
+  font-size: var(--text-md);
+
+  a {
+    color: var(--brand);
+    transition: opacity 0.2s;
+  }
+
+  a:hover {
+    opacity: 0.8;
+  }
+}
+
+.emailLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  color: var(--text);
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: var(--brand);
+  }
+}
+
+.emailText {
+  font-size: var(--text-lg);
+  font-weight: 500;
+
+  @media (max-width: 768px) {
+    font-size: var(--text-md);
+  }
+}
