@@ -203,7 +203,7 @@ const galleryImages = [
   {
     src: "/gallery/cadi5.jpg",
     alt: "Aerial view of Accra",
-    caption: "View of Accra from the plane window during the flight back from Sunyani.",
+    caption: "View of Accra from the plane window during the flight back from Sunyani after CADI AI field operations.",
     year: "2025",
   },
   {
