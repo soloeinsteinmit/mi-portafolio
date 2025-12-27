@@ -109,10 +109,10 @@ const projects = [
           research autonomously. Deployed on production platform serving
           real-world research workflows.
         </p>
-        <p>
+        {/* <p>
           Featured in MinoHealth AI Labs blog as a breakthrough in agentic AI
           research systems.
-        </p>
+        </p> */}
       </>
     ),
   },
