@@ -81,7 +81,7 @@ const galleryImages = [
     year: "2025",
   },
   {
-    src: "/gallery/5.jpeg",
+    src: "/gallery/glb4.jpeg",
     alt: "Global Code Bootcamp Mentoring",
     caption: "Mentoring students in Python and AI integration at University of Cape Coast",
     year: "2025",
@@ -117,7 +117,13 @@ const galleryImages = [
     year: "2025",
   },
   {
-    src: "/gallery/4.jpeg",
+    src: "/gallery/glb3.jpg",
+    alt: "Global Code Bootcamp Mentoring",
+    caption: "Debugging students code with co-intstructor Zenas, University of Cape Coast",
+    year: "2025",
+  },
+  {
+    src: "/gallery/glb5.jpeg",
     alt: "Global Code Bootcamp Mentoring",
     caption: "Mentoring students in Python and AI integration at University of Cape Coast",
     year: "2025",
@@ -183,6 +189,18 @@ const galleryImages = [
     year: "2025",
   },
   {
+    src: "/gallery/cadi9.jpg",
+    alt: "Drone mapping in Bono Region",
+    caption: "With teammates Donald and BoBT and a local farmer during field operations.",
+    year: "2025",
+  },
+  {
+    src: "/gallery/cadi8.jpg",
+    alt: "Drone mapping in Bono Region",
+    caption: "With teammates Donald and BoBT and a local extension officer during field operations.",
+    year: "2025",
+  },
+  {
     src: "/gallery/cadi2.jpg",
     alt: "Team and extension officer on site",
     caption: "With teammates Donald and BoBT and a local extension officer during field operations.",
@@ -192,12 +210,6 @@ const galleryImages = [
     src: "/gallery/cadi3.jpg",
     alt: "Arrival in Savannah Region",
     caption: "First landing in the Savannah Region with the team for agricultural data collection.",
-    year: "2025",
-  },
-  {
-    src: "/gallery/cadi4.jpg",
-    alt: "DJI Phantom 4 Pro drone operation",
-    caption: "Operating the DJI Phantom 4 Pro with the team, a farmer, and an extension officer.",
     year: "2025",
   },
   {
@@ -219,6 +231,12 @@ const galleryImages = [
     year: "2025",
   },
   {
+    src: "/gallery/cadi4.jpg",
+    alt: "DJI Phantom 4 Pro drone operation",
+    caption: "Operating the DJI Phantom 4 Pro with the team, a farmer, and an extension officer.",
+    year: "2025",
+  },
+  {
     src: "/gallery/run1.jpeg",
     alt: "Runmila AI Institute Summer Camp",
     caption: "Teaching Python and Generative AI to students from Montserrat, Grenada, and Dominica during the Runmila AI Summer Camp.",
@@ -228,6 +246,18 @@ const galleryImages = [
     src: "/gallery/run2.jpeg",
     alt: "Runmila AI Institute Summer Camp",
     caption: "Conducting a hands-on session on Large Language Models and AI agents via Google Colab.",
+    year: "2025",
+  },
+  {
+    src: "/gallery/kara.png",
+    alt: "karaAgro AI",
+    caption: "Featured linkedin post by karaAgro AI x GIZ Ghana on a successful CADI AI pilot.",
+    year: "2025",
+  },
+  {
+    src: "/gallery/giz.png",
+    alt: "GIZ Ghana",
+    caption: "Featured linkedin post by GIZ Ghana on a successful Global Code 2025 Bootcamp.",
     year: "2025",
   },
 ];
