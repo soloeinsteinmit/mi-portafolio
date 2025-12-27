@@ -17,6 +17,18 @@
   font-size: var(--text-md);
   font-weight: 600;
   color: var(--text);
+
+  a {
+    color: inherit; // Ensure it looks like title text by default
+    text-decoration: none;
+    transition: 0.3s;
+    cursor: pointer;
+
+    &:hover {
+      color: var(--brand); // Use brand color on hover
+      text-decoration: underline;
+    }
+  }
 }
 
 .position {

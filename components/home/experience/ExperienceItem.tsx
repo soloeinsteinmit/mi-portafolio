@@ -2,7 +2,7 @@ import { Reveal } from "@/components/utils/Reveal";
 import styles from "./experience.module.scss";
 
 interface Props {
-  title: string;
+  title: string | JSX.Element;
   position: string;
   time: string;
   location: string;

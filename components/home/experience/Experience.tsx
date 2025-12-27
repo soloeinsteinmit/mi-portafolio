@@ -5,8 +5,8 @@ export const Experience = () => {
   return (
     <section className="section-wrapper" id="experience">
       <SectionHeader title="Experience" dir="l" />
-      {experience.map((item) => (
-        <ExperienceItem key={item.title} {...item} />
+      {experience.map((item, index) => (
+        <ExperienceItem key={index} {...item} />
       ))}
     </section>
   );
@@ -14,7 +14,22 @@ export const Experience = () => {
 
 const experience = [
   {
-    title: "EnBW Energie Baden-Württemberg AG (via Ishango AI, London UK)",
+    title: (
+      <>
+        <a
+          href="https://www.enbw.com/company/"
+          target="_blank"
+          rel="nofollow noreferrer"
+        >
+          EnBW Energie Baden-Württemberg AG
+        </a>{" "}
+        (via{" "}
+        <a href="https://ishango.ai/" target="_blank" rel="nofollow noreferrer">
+          Ishango AI
+        </a>
+        , London UK)
+      </>
+    ),
     position: "L3 MLOps Engineer",
     time: "Dec 2025 - Present",
     location: "Karlsruhe, Germany (Remote)",
@@ -31,7 +46,11 @@ const experience = [
     ],
   },
   {
-    title: "Noeud",
+    title: (
+      <a href="https://www.getnoeud.com/" target="_blank" rel="nofollow noreferrer">
+        Noeud
+      </a>
+    ),
     position: "Founding Machine Learning Engineer (R&D)",
     time: "Oct 2025 - Present",
     location: "Accra, Ghana (Part-Time Remote)",
@@ -49,7 +68,11 @@ const experience = [
     ],
   },
   {
-    title: "MinoHealth AI Labs",
+    title: (
+      <a href="https://minohealth.ai/" target="_blank" rel="nofollow noreferrer">
+        MinoHealth AI Labs
+      </a>
+    ),
     position: "Machine Learning Engineer",
     time: "Oct 2024 - Dec 2025",
     location: "Accra, Ghana",
@@ -71,7 +94,11 @@ const experience = [
     ],
   },
   {
-    title: "KaraAgro AI",
+    title: (
+      <a href="https://karaagro.com/" target="_blank" rel="nofollow noreferrer">
+        KaraAgro AI
+      </a>
+    ),
     position: "AI Engineer & Drone Mapping",
     time: "Jan 2025 - Dec 2025",
     location: "Accra, Ghana (Part-Time Contract)",
@@ -88,7 +115,15 @@ const experience = [
     ],
   },
   {
-    title: "Runmila AI Institute",
+    title: (
+      <a
+        href="https://www.linkedin.com/company/runmila-ai-institute/"
+        target="_blank"
+        rel="nofollow noreferrer"
+      >
+        Runmila AI Institute
+      </a>
+    ),
     position: "AI Instructor",
     time: "Jul 2025 - Sep 2025",
     location: "Remote (Contract)",
