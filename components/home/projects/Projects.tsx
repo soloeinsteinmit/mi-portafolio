@@ -159,7 +159,7 @@ const projects = [
           demonstrating breakthrough capabilities in antibiotic discovery
           (targeting multidrug-resistant pathogens), antibody design (malaria
           therapeutics), antigen inference (vaccine development), and
-          biosecurity assessment. A technical report documenting the agent's
+          biosecurity assessment. A technical report documenting the agent&apos;s
           architecture and validation is also available under the publications
           section of this portfolio.
         </p>
