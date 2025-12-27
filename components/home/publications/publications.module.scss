@@ -20,15 +20,27 @@
   line-height: 1.4;
 }
 
+.linkIcons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
 .linkIcon {
   color: var(--brand);
   opacity: 0.75;
-  transition: opacity 0.25s;
+  transition: all 0.25s;
   flex-shrink: 0;
 
   &:hover {
     opacity: 1;
+    transform: translateY(-2px);
   }
+}
+
+.reportIcon {
+  color: #8b5cf6;
 }
 
 .meta {

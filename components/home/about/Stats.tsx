@@ -42,8 +42,7 @@ export const Stats = () => {
           </h4>
           <div className={styles.statGrid}>
             <span className="chip">Docker</span>
-            <span className="chip">AWS</span>
-            <span className="chip">DigitalOcean</span>
+            <span className="chip">IaaS (AWS, DigitalOcean)</span>
             {/* <span className="chip">Kubernetes</span> */}
             <span className="chip">CI/CD</span>
             <span className="chip">MLFlow</span>
@@ -73,6 +72,7 @@ export const Stats = () => {
             <span className="chip">TypeScript</span>
             <span className="chip">JavaScript</span>
             <span className="chip">Tailwind</span>
+            <span className="chip">React Query</span>
             <span className="chip">Figma</span>
             <span className="chip">Prisma</span>
             <span className="chip">Justinmind</span>

@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { AiOutlineLink } from "react-icons/ai";
+import { AiOutlineLink, AiOutlineRead } from "react-icons/ai";
+import { HiOutlineDocumentText } from "react-icons/hi";
 import { Reveal } from "@/components/utils/Reveal";
 import styles from "./publications.module.scss";
 
@@ -11,6 +12,8 @@ interface Props {
   link: string;
   doi?: string;
   arxiv?: string;
+  blogLink?: string;
+  technicalReport?: string;
   collaboration?: string;
   description: string;
 }
@@ -23,6 +26,8 @@ export const PublicationItem = ({
   link,
   doi,
   arxiv,
+  blogLink,
+  technicalReport,
   collaboration,
   description,
 }: Props) => {
@@ -31,11 +36,23 @@ export const PublicationItem = ({
       <div className={styles.publication}>
         <div className={styles.heading}>
           <h4 className={styles.title}>{title}</h4>
-          {link && link !== "#" && (
-            <Link href={link} target="_blank" rel="nofollow">
-              <AiOutlineLink size="2rem" className={styles.linkIcon} />
-            </Link>
-          )}
+          <div className={styles.linkIcons}>
+            {blogLink && (
+              <Link href={blogLink} target="_blank" rel="nofollow" title="Read Blog Post">
+                <AiOutlineRead size="2.2rem" className={styles.linkIcon} />
+              </Link>
+            )}
+            {link && link !== "#" && (
+              <Link href={link} target="_blank" rel="nofollow" title="View Paper">
+                <HiOutlineDocumentText size="2.2rem" className={styles.linkIcon} />
+              </Link>
+            )}
+            {technicalReport && (
+              <Link href={technicalReport} target="_blank" rel="nofollow" title="Technical Report">
+                <HiOutlineDocumentText size="2.2rem" className={`${styles.linkIcon} ${styles.reportIcon}`} />
+              </Link>
+            )}
+          </div>
         </div>
         
         <div className={styles.meta}>

@@ -29,7 +29,7 @@ export const About = () => {
               At MinoHealth AI Labs, I built the Moremi Deep Research Agent,
               achieving a RACE score of 46.3 on the DeepResearch Bench (ranked
               3/18 agents). I&apos;ve architected systems processing 20,000+
-              molecules in multi-day runs, and co-authored 4 research
+              molecules and protein sequences in multi-day runs, and co-authored 4 research
               publications in 2025 on AI-driven drug discovery and biosecurity.
             </p>
           </Reveal>
@@ -37,7 +37,7 @@ export const About = () => {
             <p className={styles.aboutText}>
               My tech stack spans PyTorch, TensorFlow, FastAPI, Docker, and the
               full MLOps toolchain (AWS, MLFlow, CI/CD etc.). I&apos;m also
-              proficient in full-stack development with React, Next.js, Prisma, and
+              proficient in full-stack development with React, Next.js, Node.js, Prisma, and
               building scalable distributed systems.
             </p>
           </Reveal>

@@ -36,7 +36,7 @@ const experience = [
     time: "Oct 2025 - Present",
     location: "Accra, Ghana (Part-Time Remote)",
     description:
-      "Leading research and prototyping of real-time financial forecasting systems using Temporal Fusion Transformers and deep time-series models. Designing end-to-end pipelines from data ingestion to deployment for live market prediction systems.",
+      "Leading research and prototyping of real-time financial forecasting systems and deep time-series models. Designing end-to-end pipelines from data ingestion to deployment and continuous retraining for live market prediction systems.",
     tech: [
       "PyTorch",
       "Time-Series Forecasting",
