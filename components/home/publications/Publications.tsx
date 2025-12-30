@@ -17,9 +17,10 @@ const publications = [
   {
     title: "Moremi Bio Agent: Using Neisseria meningitidis Reference Data For The Double Blinded Validation of A General Purpose Biology-Trained Reasoning Model for Pathogen and Antigen Discovery",
     authors: "Co-Authored",
-    journal: "Submitted for review",
+    journal: "bioRxiv",
     year: "2025",
-    link: "#",
+    link: "https://doi.org/10.64898/2025.12.17.694980",
+    doi:"10.64898/2025.12.17.694980",
     collaboration: "MinoHealth AI Labs • Imperial College London, Infectious Disease, London, UK",
     description:
       "First-of-its-kind AI system demonstrating blind antigen inference from antibody sequences. Moremi Bio Nano successfully identified experimentally validated antigens in 3 out of 4 independent tests, correctly predicting SARS-CoV-2 Spike RBD, Neisseria meningitidis fHbp v1.1, and SARS-CoV Spike as top-ranked candidates—marking a breakthrough in reasoning-driven antigen discovery without prior biological context.",
