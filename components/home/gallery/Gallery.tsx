@@ -123,6 +123,12 @@ const galleryImages = [
     year: "2025",
   },
   {
+    src: "/gallery/glb6.jpg",
+    alt: "Global Code Bootcamp Mentoring",
+    caption: "Debugging students code with co-intstructor Zenas, University of Cape Coast",
+    year: "2025",
+  },
+  {
     src: "/gallery/glb5.jpeg",
     alt: "Global Code Bootcamp Mentoring",
     caption: "Mentoring students in Python and AI integration at University of Cape Coast",
