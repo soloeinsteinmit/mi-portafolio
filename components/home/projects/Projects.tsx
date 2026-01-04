@@ -359,7 +359,7 @@ const projects = [
   {
     title: "Quantitative XAU/USD Session Strategy",
     imgSrc: "/project-imgs/xauusd.jpg",
-    code: "https://github.com/soloeinsteinmit/Quantitative-XAUUSD-Strategy",
+    code: "https://github.com/soloshun/Quantitative-XAUUSD-Strategy",
     projectLink:
       "https://medium.com/@soloshun/can-ai-find-winning-patterns-in-the-gold-market-a-deep-dive-into-session-dynamics-1c600336128d",
     tech: [
@@ -395,7 +395,7 @@ const projects = [
   {
     title: "Building LLM from Scratch",
     imgSrc: "/project-imgs/llm.webp",
-    code: "https://github.com/soloeinsteinmit/llm-from-scratch",
+    code: "https://github.com/soloshun/llm-from-scratch",
     projectLink: "https://soloshun.medium.com/",
     tech: [
       "Python",
@@ -428,7 +428,7 @@ const projects = [
   {
     title: "DS.AlgoDeck - Interactive Learning Platform",
     imgSrc: "/project-imgs/dsalgo.png",
-    code: "https://github.com/soloeinsteinmit/ds-algo-deck-v010",
+    code: "https://github.com/soloshun/ds-algo-deck-v010",
     projectLink: "https://dsalgodeck.netlify.app/",
     tech: [
       "React",
@@ -462,7 +462,7 @@ const projects = [
   {
     title: "Sonu AI - Plant Disease Detection",
     imgSrc: "/project-imgs/sonu.png",
-    code: "https://github.com/soloeinsteinmit/sonu-ai",
+    code: "https://github.com/soloshun/sonu-ai",
     projectLink: "https://sonu-ai.vercel.app",
     tech: ["Next.js", "ONNX", "Computer Vision", "PWA", "Tailwind", "Leaflet"],
     description:

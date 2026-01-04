@@ -90,7 +90,7 @@ export default function HomePage() {
               ],
               "sameAs": [
                 "https://www.linkedin.com/in/solomon-eshun-788568317",
-                "https://github.com/soloeinsteinmit",
+                "https://github.com/soloshun",
                 "https://medium.com/@soloshun"
               ]
             })

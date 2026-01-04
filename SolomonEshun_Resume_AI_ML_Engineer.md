@@ -1,5 +1,5 @@
 **SOLOMON ESHUN**  
-Accra, Ghana  •  [solomoneshun373@gmail.com](mailto:solomoneshun373@gmail.com)  •  (+233) 53-159-2835  •  [linkedin.com/in/solomon-eshun](https://www.linkedin.com/in/solomon-eshun-788568317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) •    [github.com/soloeinsteinmit](https://github.com/soloeinsteinmit) • [medium.com/@soloshun](https://medium.com/@soloshun)   
+Accra, Ghana  •  [solomoneshun373@gmail.com](mailto:solomoneshun373@gmail.com)  •  (+233) 53-159-2835  •  [linkedin.com/in/solomon-eshun](https://www.linkedin.com/in/solomon-eshun-788568317?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app) •    [github.com/soloshun](https://github.com/soloshun) • [medium.com/@soloshun](https://medium.com/@soloshun)   
 ---
 
 **AI/ML Engineer** with a strong **Software Engineering** foundation and proven ability to design and deploy intelligent systems for real-world applications. Experienced in building advanced pipelines, scalable APIs, and autonomous agents for data processing, computer vision, and LLM integration. Skilled in Python, PyTorch, TensorFlow, and FastAPI, with additional strengths in full-stack development, system design, and deploying AI solutions at scale. 
@@ -69,16 +69,16 @@ Accra, Ghana  •  [solomoneshun373@gmail.com](mailto:solomoneshun373@gmail.com)
 
 * **Quantitative XAU/USD Session Strategy *(Independent Research \- Time-Series Modelling)*:**   
   * Built an end-to-end pipeline to benchmark XGBoost, LSTM, and Transformer architectures for financial market direction and return prediction.   
-  * Implemented full workflow: data acquisition via MetaTrader5 API, feature engineering, modelling, evaluation, and backtesting. [**GitHub**](https://github.com/soloeinsteinmit/Quantitative-XAUUSD-Strategy) **| [Hypothesis A Result \- Medium](https://medium.com/@soloshun/can-ai-find-winning-patterns-in-the-gold-market-a-deep-dive-into-session-dynamics-1c600336128d)**  
+  * Implemented full workflow: data acquisition via MetaTrader5 API, feature engineering, modelling, evaluation, and backtesting. [**GitHub**](https://github.com/soloshun/Quantitative-XAUUSD-Strategy) **| [Hypothesis A Result \- Medium](https://medium.com/@soloshun/can-ai-find-winning-patterns-in-the-gold-market-a-deep-dive-into-session-dynamics-1c600336128d)**  
 * **Building a Large Language Model from Scratch *(A Public Learning Journey)*:**   
   * Developing a functional LLM from first principles to explore transformer architectures, attention mechanisms, tokenization, and training workflows.   
-  * Documenting the entire process through open-source code, visualizations, and educational articles to make advanced AI concepts accessible. [**Github**](https://github.com/soloeinsteinmit/llm-from-scratch) | [**Medium**](https://soloshun.medium.com/)  
+  * Documenting the entire process through open-source code, visualizations, and educational articles to make advanced AI concepts accessible. [**Github**](https://github.com/soloshun/llm-from-scratch) | [**Medium**](https://soloshun.medium.com/)  
 * **Sonu AI – Offline Plant Disease Detection App(*Hackathon Project*):**   
   * Developed an AI-powered offline PWA for crop disease detection and treatment guidance, optimized for Ghanaian farmers.    
   * Implemented ONNX for on-device inference, Leaflet for outbreak mapping, and Next.js \+ Tailwind for mobile UI.    
-  * Achieved 96% accuracy with full offline capability and deployed live within 5 days. [**Live App**](https://sonu-ai.vercel.app) |  [**Devpost**](https://devpost.com/software/sonu-t0xypw) |  [**GitHub**](https://github.com/soloeinsteinmit/sonu-ai)  
+  * Achieved 96% accuracy with full offline capability and deployed live within 5 days. [**Live App**](https://sonu-ai.vercel.app) |  [**Devpost**](https://devpost.com/software/sonu-t0xypw) |  [**GitHub**](https://github.com/soloshun/sonu-ai)  
 * **DS.AlgoDeck – Interactive Data Structures & Algorithms Platform *(Open-Source Educational Platform)*:**   
-  * Built an open-source platform for learning data structures through interactive visualizations; currently implementing an AI-powered code generator via the Gemini API. [**GitHub**](https://github.com/soloeinsteinmit/ds-algo-deck-v010) | [**Homepage**](https://dsalgodeck.netlify.app/) | [**Live Playground**](https://dsalgodeck.netlify.app/playground)
+  * Built an open-source platform for learning data structures through interactive visualizations; currently implementing an AI-powered code generator via the Gemini API. [**GitHub**](https://github.com/soloshun/ds-algo-deck-v010) | [**Homepage**](https://dsalgodeck.netlify.app/) | [**Live Playground**](https://dsalgodeck.netlify.app/playground)
 
 **EDUCATION**
 

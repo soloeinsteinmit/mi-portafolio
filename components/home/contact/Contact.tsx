@@ -23,7 +23,7 @@ export const Contact = () => {
               LinkedIn
             </Link>{" "}
             or{" "}
-            <Link href="https://github.com/soloeinsteinmit" target="_blank" rel="nofollow">
+            <Link href="https://github.com/soloshun" target="_blank" rel="nofollow">
               GitHub
             </Link>{" "}
             if that&apos;s more your speed.
