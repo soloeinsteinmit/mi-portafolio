@@ -38,13 +38,13 @@ export const Stats = () => {
         <div className={styles.statColumn}>
           <h4>
             <AiFillSmile size="2.4rem" color="var(--brand)" />
-            <span>DataOps, MLOps & DevOps</span>
+            <span>DataOps, MLOps, SRE & DevOps</span>
           </h4>
           <div className={styles.statGrid}>
             <span className="chip">Docker</span>
             <span className="chip">DataDog</span>
-            <span className="chip">Prefect-AWS</span>
-            <span className="chip">IaaS (AWS, DigitalOcean)</span>
+            <span className="chip">Prefect</span>
+            <span className="chip">IaaS (AWS, Azure, DigitalOcean)</span>
             {/* <span className="chip">Kubernetes</span> */}
             <span className="chip">CI/CD</span>
             <span className="chip">MLFlow</span>

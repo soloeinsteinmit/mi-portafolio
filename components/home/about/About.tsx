@@ -21,7 +21,7 @@ export const About = () => {
               <br />I specialize in building advanced AI systems that solve
               real-world problems - from autonomous research agents that rank
               among the top globally, to production-scale DataOps and MLOps pipelines
-              serving enterprise clients.
+              serving enterprise European clients.
             </p>
           </Reveal>
           <Reveal>
@@ -36,7 +36,7 @@ export const About = () => {
           <Reveal>
             <p className={styles.aboutText}>
               My tech stack spans PyTorch, TensorFlow, FastAPI, Docker, and the
-              full DataOps and MLOps toolchain (DataDog, Prefect-AWS, MLFlow, CI/CD etc.). I&apos;m also
+              full DataOps and MLOps toolchain (DataDog, Prefect, MLFlow, CI/CD etc.). I&apos;m also
               proficient in full-stack development with React, Next.js, Node.js, Prisma, and
               building scalable distributed systems.
             </p>

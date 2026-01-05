@@ -10,19 +10,19 @@ export default function HomePage() {
 
         {/* Primary Meta Tags */}
         <meta name="title" content="Solomon Eshun (Solo Shun) | AI/ML Engineer, MLOps Specialist & Quantitative Finance Developer" />
-        <meta name="description" content="Solomon Eshun (Solo Shun) - AI/ML Engineer specializing in autonomous AI agents, production MLOps, DataOps, algorithmic trading, and quantitative finance. Building intelligent systems for finance, and enterprise. Expert in PyTorch, TensorFlow, time-series forecasting, and algorithmic trading strategies." />
+        <meta name="description" content="Solomon Eshun (Solo Shun) - AI/ML Engineer specializing in autonomous AI agents, production MLOps, DataOps, SRE, algorithmic trading, and quantitative finance. Building intelligent systems for finance, and enterprise. Expert in PyTorch, TensorFlow, time-series forecasting, and algorithmic trading strategies." />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="author" content="Solomon Eshun" />
 
         {/* Comprehensive Keywords */}
-        <meta name="keywords" content="Solomon Eshun, Solo Shun, AI Engineer, Machine Learning Engineer, MLOps Engineer, DataOps Engineer, Deep Learning, PyTorch, TensorFlow, Autonomous AI Agents, LLMs, Agentic AI, Computer Vision, YOLO, Bioinformatics, Drug Discovery, Medical AI, Time-Series Forecasting, Algorithmic Trading, Quantitative Finance, Forex Trading, MQL5, MetaTrader, TradingView, Python, Docker, FastAPI, Celery, RabbitMQ, Redis, React, Next.js, Transformers, LSTM, XGBoost, Temporal Fusion Transformers, MLOps, DataOps, DevOps, CI/CD, Kubernetes, AWS, DigitalOcean, Research Publications, MinoHealth AI, EnBW, Noeud, Ghana AI, African AI Engineer, Moremi AI Agent, DeepResearch Bench, Production ML Systems, Enterprise ML, Distributed Systems, Real-time ML Pipelines, Financial Forecasting" />
+        <meta name="keywords" content="Solomon Eshun, Solo Shun, AI Engineer, Machine Learning Engineer, MLOps Engineer, DataOps Engineer, Deep Learning, PyTorch, TensorFlow, Autonomous AI Agents, LLMs, Agentic AI, Computer Vision, YOLO, Bioinformatics, Drug Discovery, Medical AI, Time-Series Forecasting, Algorithmic Trading, Quantitative Finance, Forex Trading, MQL5, MetaTrader, TradingView, Python, Docker, FastAPI, Celery, RabbitMQ, Redis, React, Next.js, Transformers, LSTM, XGBoost, Temporal Fusion Transformers, MLOps, DataOps, SRE, DevOps, CI/CD, Kubernetes, AWS, DigitalOcean, Research Publications, MinoHealth AI, EnBW, Noeud, Ghana AI, African AI Engineer, Moremi AI Agent, DeepResearch Bench, Production ML Systems, Enterprise ML, Distributed Systems, Real-time ML Pipelines, Financial Forecasting" />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://solomoneshun.vercel.app/" />
         <meta property="og:site_name" content="Solomon Eshun Portfolio" />
         <meta property="og:title" content="Solomon Eshun (Solo Shun) | AI/ML Engineer, MLOps & DataOps Specialist & Quantitative Finance Developer" />
-        <meta property="og:description" content="AI/ML Engineer building autonomous research agents, production ML systems, and algorithmic trading strategies. Co-authored 4 research publications. Expertise in PyTorch, MLOps, DataOps, quantitative finance, and agentic AI systems." />
+        <meta property="og:description" content="AI/ML Engineer building autonomous research agents, production ML systems, and algorithmic trading strategies. Co-authored 4 research publications. Expertise in PyTorch, MLOps, DataOps, SRE, quantitative finance, and agentic AI systems." />
         <meta property="og:image" content="https://solomoneshun.vercel.app/screenshot.png" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
