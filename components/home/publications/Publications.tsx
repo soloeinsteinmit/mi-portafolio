@@ -19,8 +19,9 @@ const publications = [
     authors: "Co-Authored",
     journal: "bioRxiv",
     year: "2025",
+    blogLink: "https://minohealth.ai/blog/moremi-bio-agent-v2-worlds-first-blind-ai-antigen-discovery",
     link: "https://doi.org/10.64898/2025.12.17.694980",
-    doi:"10.64898/2025.12.17.694980",
+    doi: "10.64898/2025.12.17.694980",
     collaboration: "MinoHealth AI Labs • Imperial College London, Infectious Disease, London, UK",
     description:
       "First-of-its-kind AI system demonstrating blind antigen inference from antibody sequences. Moremi Bio Nano successfully identified experimentally validated antigens in 3 out of 4 independent tests, correctly predicting SARS-CoV-2 Spike RBD, Neisseria meningitidis fHbp v1.1, and SARS-CoV Spike as top-ranked candidates—marking a breakthrough in reasoning-driven antigen discovery without prior biological context.",
@@ -43,13 +44,13 @@ const publications = [
     journal: "arXiv",
     year: "2025",
     link: "https://arxiv.org/abs/2505.17154",
-    blogLink:"https://www.minohealth.ai/blog/large-language-models-can-design-biological-weapons",
+    blogLink: "https://www.minohealth.ai/blog/large-language-models-can-design-biological-weapons",
     arxiv: "2505.17154",
     collaboration: "MinoHealth AI Labs",
     description:
       "Critical biosecurity assessment revealing dual-use risks of LLMs in biodesign. Generated 1,020 novel toxic proteins and 5,000 toxic small molecules, with all proteins scoring high in toxicity and several closely matching known toxins (ricin, diphtheria toxin, snake venom proteins). Findings challenge claims that LLMs cannot design bioweapons and underscore the urgent need for robust governance and technical safeguards to balance innovation with biosecurity imperatives.",
   },
-      {
+  {
     title: "Moremi Bio Agent: A Large Language Model for General-Purpose High-Throughput De Novo Protein and Compound Discovery, Design and Validation (Early Validations)",
     authors: "Co-Authored",
     journal: "Technical Report",
