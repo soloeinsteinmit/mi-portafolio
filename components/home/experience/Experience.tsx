@@ -30,13 +30,14 @@ const experience = [
         , London UK)
       </>
     ),
-    position: "L3 MLOps Engineer",
+    position: "DataOps Engineer",
     time: "Dec 2025 - Present",
     location: "Karlsruhe, Germany (Remote)",
     description:
-      "Supporting enterprise-scale MLOps initiatives for a leading European energy provider. Focusing on production ML infrastructure, deployment pipelines, and operational reliability in regulated, high-availability environments.",
+      "Supporting enterprise-scale DataOps and ML operations for a leading European energy provider. Focusing on reliable data pipelines, production ML infrastructure, and deployment automation",
     tech: [
       "MLOps",
+      "DataOps",
       "Python",
       "Docker",
       "CI/CD",
@@ -60,9 +61,11 @@ const experience = [
       "PyTorch",
       "Time-Series Forecasting",
       "ML Pipelines",
+      "Data Pipelines",
       "System Design",
       "Model Deployment",
       "MLOps",
+      "DataOps",
       "Python",
       "Quantitative Finance",
     ],

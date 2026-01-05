@@ -23,8 +23,8 @@ export const Hero = () => {
           </Reveal>
           <Reveal>
             <p className={styles.aboutCopy}>
-              I design and deploy intelligent systems that solve real-world challenges across AI and finance. From building autonomous AI agents and production-scale 
-              ML pipelines to developing quantitative trading systems and algorithmic strategies 
+              I design and deploy intelligent systems that solve real-world challenges across AI and finance. From building autonomous AI agents and production-scale
+              ML & Data pipelines to developing quantitative trading systems and algorithmic strategies
               for financial markets. Let&apos;s build the future together!
             </p>
           </Reveal>
