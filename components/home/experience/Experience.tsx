@@ -41,6 +41,7 @@ const experience = [
       "Docker",
       "DataDog",
       "Prefect",
+      "DataSync.Platform",
       "AzureDevOps",
       "CI/CD",
       "Model Deployment",
