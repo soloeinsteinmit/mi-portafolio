@@ -30,11 +30,11 @@ const experience = [
         , London UK)
       </>
     ),
-    position: "DataOps Engineer",
+    position: "DataOps Engineer (Data Platform Engineering)",
     time: "Dec 2025 - Present",
     location: "Karlsruhe, Germany (Remote)",
     description:
-      "Supporting enterprise-scale DataOps, DevOps and ML operations for a leading European energy provider. Focusing on reliable data pipelines, production ML infrastructure, and deployment automation",
+      "Supporting the development of an internal data platform for a leading European energy provider. My work focuses on building shared abstractions and guardrails that standardise data pipeline development across teams. Instead of writing ad-hoc orchestration logic, downstream users rely on platform-managed libraries that handle data quality checks, retries, observability, alerting, and documentation by default. This enables reliable, scalable, and compliant data workflows in regulated, high-availability environments.",
     tech: [
       "MLOps",
       "Python",

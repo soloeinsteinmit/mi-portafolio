@@ -11,6 +11,8 @@ import { Activities } from "./activities/Activities";
 import { Gallery } from "./gallery/Gallery";
 import { Contact } from "./contact/Contact";
 import { LanguageDetector } from "../utils/LanguageDetector";
+import { Footer } from "./footer/Footer";
+
 
 export const Home = () => {
   return (
@@ -27,13 +29,8 @@ export const Home = () => {
           <Activities />
           <Contact />
           <Gallery />
-          <div
-            style={{
-              height: "200px",
-              background:
-                "linear-gradient(180deg, var(--background), var(--background-dark))",
-            }}
-          />
+          <Footer />
+
         </main>
       </div>
       {/* Language Detection Banner - Comment out to disable */}
