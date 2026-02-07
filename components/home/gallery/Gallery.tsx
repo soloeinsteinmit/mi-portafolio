@@ -75,6 +75,79 @@ export const Gallery = () => {
 
 const galleryImages = [
   {
+    src: "/gallery/noeud1.jpeg",
+    alt: "noeud",
+    caption: "Building noeud infratructure... Burning the midnight candle🕯️",
+    year: "2026",
+  },
+  {
+    src: "/gallery/noeud2.jpeg",
+    alt: "noeud",
+    caption: "Late nights❤️‍🔥🥹... Rest at the end, not in the middle!!!",
+    year: "2026",
+  },
+  {
+    src: "/gallery/enbw3.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+  {
+    src: "/gallery/enbw5.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+  {
+    src: "/gallery/enbw1.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+  {
+    src: "/gallery/enbw2.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+  {
+    src: "/gallery/enbw4.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+
+
+  {
+    src: "/gallery/ds3.jpeg",
+    alt: "DS-I Africa",
+    caption: "At DS-I Africa Consortium Meeting 2025",
+    year: "2025",
+  },
+  {
+    src: "/gallery/ds1.jpg",
+    alt: "DS-I Africa",
+    caption: "At DS-I Africa Consortium Meeting 2025",
+    year: "2025",
+  },
+  {
+    src: "/gallery/ds1.jpg",
+    alt: "DS-I Africa",
+    caption: "At DS-I Africa Consortium Meeting 2025",
+    year: "2025",
+  },
+  {
+    src: "/gallery/ds2.jpg",
+    alt: "DS-I Africa",
+    caption: "At DS-I Africa Consortium Meeting 2025",
+    year: "2025",
+  }, {
+    src: "/gallery/3.jpg",
+    alt: "Ghana Data Science Summit 2025",
+    caption: "Presenting on Software Engineering in the Age of AI at Academic City University",
+    year: "2025",
+  },
+  {
     src: "/gallery/2.jpg",
     alt: "Speaking at Tech & Beyond Expo 2025",
     caption: "Presenting on Software Engineering in the Age of AI at Academic City University",
@@ -86,30 +159,8 @@ const galleryImages = [
     caption: "Mentoring students in Python and AI integration at University of Cape Coast",
     year: "2025",
   },
-  {
-    src: "/gallery/3.jpg",
-    alt: "Ghana Data Science Summit 2025",
-    caption: "Presenting on Software Engineering in the Age of AI at Academic City University",
-    year: "2025",
-  },
-  {
-    src: "/gallery/ds3.jpeg",
-    alt: "DS-I Africa",
-    caption: "At DS-I Africa Consortium Meeting 2025",
-    year: "2025",
-  },
-  {
-    src: "/gallery/enbw3.jpeg",
-    alt: "EnBW",
-    caption: "Remote work at EnBW",
-    year: "2026",
-  },
-  {
-    src: "/gallery/ds1.jpg",
-    alt: "DS-I Africa",
-    caption: "At DS-I Africa Consortium Meeting 2025",
-    year: "2025",
-  },
+
+
   {
     src: "/gallery/ds2.jpg",
     alt: "DS-I Africa",
@@ -151,24 +202,6 @@ const galleryImages = [
     alt: "IndabaX Ghana",
     caption: "LoRA fine-tuning workshop at IndabaX Ghana, Ashesi University",
     year: "2025",
-  },
-  {
-    src: "/gallery/enbw1.jpeg",
-    alt: "EnBW",
-    caption: "Remote work at EnBW",
-    year: "2026",
-  },
-  {
-    src: "/gallery/enbw2.jpeg",
-    alt: "EnBW",
-    caption: "Remote work at EnBW",
-    year: "2026",
-  },
-  {
-    src: "/gallery/enbw4.jpeg",
-    alt: "EnBW",
-    caption: "Remote work at EnBW",
-    year: "2026",
   },
   {
     src: "/gallery/ind3.jpg",
