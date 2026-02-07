@@ -131,12 +131,6 @@ const galleryImages = [
     year: "2025",
   },
   {
-    src: "/gallery/ds1.jpg",
-    alt: "DS-I Africa",
-    caption: "At DS-I Africa Consortium Meeting 2025",
-    year: "2025",
-  },
-  {
     src: "/gallery/ds2.jpg",
     alt: "DS-I Africa",
     caption: "At DS-I Africa Consortium Meeting 2025",
