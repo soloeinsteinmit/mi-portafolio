@@ -81,6 +81,102 @@ const projects = [
     ),
   },
   {
+    title: "Moremi Bio Co-Researcher",
+    // title: "Moremi Bio Co-Researcher - Public Bio Agent",
+    imgSrc: "/project-imgs/cor.gif",
+    code: "#",
+    projectLink: "https://moremi.ai",
+    tech: [
+      "Python",
+      "Agentic AI",
+      "LLMs",
+      "Bioinformatics Tools",
+      "Security Hardening",
+    ],
+    description:
+      "Public-facing bioinformatics agent on moremi.ai, providing secure access to the unified infrastructure for computational biology research.",
+    modalContent: (
+      <>
+        <p>
+          Designed <strong>Moremi Bio Co-Researcher</strong>, a security-
+          hardened, public-facing version deployed on{" "}
+          <a
+            href="https://moremi.ai"
+            style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            moremi.ai
+          </a>{" "}
+          that brings computational biology capabilities to the public. It
+          leverages the same unified bioinformatics infrastructure (20+
+          containerized tools) used by the internal Moremi Bio Agent.
+        </p>
+        <p>
+          <strong>Constrained for Safety:</strong> Implemented security
+          constraints and usage limits to ensure safe public operation while
+          maintaining genuine research capabilities. The agent functions as an
+          autonomous scientific partner, executing complex computational biology
+          workflows through a tool-driven architecture—allowing researchers
+          worldwide to conduct computational experiments without requiring
+          infrastructure access.
+        </p>
+        <p>
+          <strong>Public Research Tool:</strong> Enables independent
+          researchers, students, and institutions to perform bioinformatics
+          analyses, molecular dynamics simulations, and drug discovery workflows
+          that would typically require significant computational resources and
+          technical expertise.
+        </p>
+        <div style={{ marginTop: "1rem" }}>
+          <p><strong>Media & Resources:</strong></p>
+          <ul style={{ listStyleType: "disc", paddingLeft: "1.25rem", marginTop: "0.5rem" }}>
+            <li style={{ marginBottom: "0.5rem" }}>
+              <a
+                href="https://www.youtube.com/watch?v=1rXk8ydt4zk"
+                style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Video: Predicting ADMET Properties & Ranking Compounds
+              </a>
+            </li>
+            <li style={{ marginBottom: "0.5rem" }}>
+              <a
+                href="https://www.youtube.com/watch?v=zIlAIBP3zTA"
+                style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Video: Identifying Homologs & Predicting Functional Domains
+              </a>
+            </li>
+            <li style={{ marginBottom: "0.5rem" }}>
+              <a
+                href="https://www.linkedin.com/feed/update/urn:li:activity:7425548759381458944/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAFBZzFgBdNK_PhBkFl0AT6WT8ExWJp_082s"
+                style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                LinkedIn: Launch Announcement
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.minohealth.ai/blog/moremi-co-researcher-an-agentic-life-science-assistant"
+                style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Blog: Moremi Co-Researcher - An Agentic Life Science Assistant
+              </a>
+            </li>
+          </ul>
+        </div>
+      </>
+    ),
+  },
+  {
     title: "Moremi Deep Research Agent",
     imgSrc: "/project-imgs/deep_research.png",
     code: "#",
@@ -225,57 +321,6 @@ const projects = [
     ),
   },
   {
-    title: "Moremi Bio Co-Researcher",
-    // title: "Moremi Bio Co-Researcher - Public Bio Agent",
-    imgSrc: "/project-imgs/cor.gif",
-    code: "#",
-    projectLink: "https://moremi.ai",
-    tech: [
-      "Python",
-      "Agentic AI",
-      "LLMs",
-      "Bioinformatics Tools",
-      "Security Hardening",
-    ],
-    description:
-      "Public-facing bioinformatics agent on moremi.ai, providing secure access to the unified infrastructure for computational biology research.",
-    modalContent: (
-      <>
-        <p>
-          Designed <strong>Moremi Bio Co-Researcher</strong>, a security-
-          hardened, public-facing version deployed on{" "}
-          <a
-            href="https://moremi.ai"
-            style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            moremi.ai
-          </a>{" "}
-          that brings computational biology capabilities to the public. It
-          leverages the same unified bioinformatics infrastructure (20+
-          containerized tools) used by the internal Moremi Bio Agent.
-        </p>
-        <p>
-          <strong>Constrained for Safety:</strong> Implemented security
-          constraints and usage limits to ensure safe public operation while
-          maintaining genuine research capabilities. The agent functions as an
-          autonomous scientific partner, executing complex computational biology
-          workflows through a tool-driven architecture—allowing researchers
-          worldwide to conduct computational experiments without requiring
-          infrastructure access.
-        </p>
-        <p>
-          <strong>Public Research Tool:</strong> Enables independent
-          researchers, students, and institutions to perform bioinformatics
-          analyses, molecular dynamics simulations, and drug discovery workflows
-          that would typically require significant computational resources and
-          technical expertise.
-        </p>
-      </>
-    ),
-  },
-  {
     title: "Moremi AI Agents",
     // title: "Moremi AI Platform - General AI Agents",
     imgSrc: "/project-imgs/search.gif",
@@ -329,7 +374,7 @@ const projects = [
           reports from X-rays, MRIs, and CT scans using computer vision and
           LLMs. Provides immediate, data-driven insights that accelerate
           diagnostic workflows, streamlining the path from image acquisition to
-          clinical interpretation Most recent update of this AI agent include 
+          clinical interpretation Most recent update of this AI agent include
           integration with CRM and EHR systems.{" "}
           <a
             href="https://www.minohealth.ai/blog/moremi-ai-goes-agentic"
@@ -422,6 +467,80 @@ const projects = [
           Published on Medium with comprehensive explanations of each component
           and design decision.
         </p>
+      </>
+    ),
+  },
+  {
+    title: "OpenDSA - Algorithm Visualization Platform",
+    imgSrc: "/project-imgs/opendsa.png",
+    code: "https://github.com/soloshun/opendsa",
+    projectLink: "https://opendsa.vercel.app/",
+    tech: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Framer Motion",
+      "D3.js",
+      "Canvas API",
+      "Monaco Editor",
+      "Zustand",
+      "Algorithms",
+      "Data Structures",
+    ],
+    description:
+      "A complete modernization of the DS.AlgoDeck project. An interactive visualization platform for understanding algorithms through step-by-step animations.",
+    modalContent: (
+      <>
+        <p>
+          <strong>OpenDSA</strong> is an interactive visualization platform that
+          helps you understand how algorithms and data structures work through
+          step-by-step animations. Whether you’re learning algorithms for the
+          first time, teaching computer science concepts, preparing for technical
+          interviews, or building educational content, OpenDSA makes complex
+          algorithms visual and intuitive.
+        </p>
+        <p>
+          <strong>Project Overview & Migration:</strong> This project represents
+          a complete rewrite and modernization of the legacy{" "}
+          <em>ds-algo-deck</em> tool. The migration was driven by the need for
+          better scalability, performance, and a more robust contributor
+          experience.
+        </p>
+        <p>
+          <strong>Key Links:</strong>
+        </p>
+        <ul style={{ listStyleType: "disc", paddingLeft: "1.25rem" }}>
+          <li>
+            <a
+              href="https://opendsa.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+            >
+              Website
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://app-opendsa.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+            >
+              App
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://docs-opendsa.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{ color: "rgb(99, 179, 237)", textDecoration: "underline" }}
+            >
+              Documentation
+            </a>
+          </li>
+        </ul>
       </>
     ),
   },

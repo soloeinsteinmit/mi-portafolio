@@ -3,7 +3,7 @@ import styles from "./Footer.module.scss";
 
 export const Footer = () => {
     // You can update this date manually when you make significant updates to the site
-    const lastUpdated = "January 6, 2026";
+    const lastUpdated = "February 7, 2026";
 
     return (
         <footer className={styles.footer}>

@@ -46,7 +46,7 @@ export const Gallery = () => {
   return (
     <section className="section-wrapper" id="gallery">
       <SectionHeader title="Gallery" dir="r" />
-      
+
       <div className={styles.galleryGrid}>
         {galleryImages.map((item, idx) => (
           <GalleryItem key={idx} {...item} onClick={() => openLightbox(idx)} />
@@ -99,6 +99,12 @@ const galleryImages = [
     year: "2025",
   },
   {
+    src: "/gallery/enbw3.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+  {
     src: "/gallery/ds1.jpg",
     alt: "DS-I Africa",
     caption: "At DS-I Africa Consortium Meeting 2025",
@@ -145,6 +151,24 @@ const galleryImages = [
     alt: "IndabaX Ghana",
     caption: "LoRA fine-tuning workshop at IndabaX Ghana, Ashesi University",
     year: "2025",
+  },
+  {
+    src: "/gallery/enbw1.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+  {
+    src: "/gallery/enbw2.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
+  },
+  {
+    src: "/gallery/enbw4.jpeg",
+    alt: "EnBW",
+    caption: "Remote work at EnBW",
+    year: "2026",
   },
   {
     src: "/gallery/ind3.jpg",
