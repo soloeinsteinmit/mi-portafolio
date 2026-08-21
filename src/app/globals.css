@@ -1,0 +1,293 @@
+@import "tailwindcss";
+
+/* Theme: dark by default, OS preference honoured, explicit choice wins. */
+
+/* ---------------------------------------------------------------------------
+   Design tokens
+   Light: warm off-white paper. Dark: deep neutral charcoal, never pure black.
+   One restrained accent family (cool blue / electric cyan).
+--------------------------------------------------------------------------- */
+:root,
+[data-theme="dark"] {
+  --bg: #0b0c0e;
+  --bg-elevated: #121418;
+  --surface: #121418;
+  --surface-2: #16191e;
+  --surface-3: #1c2026;
+  --border: #24282e;
+  --border-strong: #363c44;
+  --text: #e9ebee;
+  --text-muted: #9aa1aa;
+  --text-faint: #6a717a;
+  --accent: #5cc8ff;
+  --accent-hover: #8ad9ff;
+  --accent-soft: rgba(92, 200, 255, 0.12);
+  --accent-line: rgba(92, 200, 255, 0.32);
+  --ok: #4ade80;
+  --warn: #f0b429;
+  --grid-line: rgba(233, 235, 238, 0.045);
+  --viz-node: #9aa4b0;
+  --viz-line: #4d5661;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 30px -14px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 30px 70px -34px rgba(0, 0, 0, 0.85);
+  --portrait-filter: grayscale(1) contrast(1.1) brightness(0.92);
+  color-scheme: dark;
+}
+
+/* No stored choice: follow the operating system, in pure CSS. This resolves
+   before first paint with no script involved, so there is nothing for
+   hydration to disagree about. */
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+  --bg: #faf9f7;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f2f0ec;
+  --surface-3: #e9e6e0;
+  --border: #e2ded7;
+  --border-strong: #cdc8bf;
+  --text: #14161a;
+  --text-muted: #565d66;
+  --text-faint: #868d96;
+  --accent: #0a72c4;
+  --accent-hover: #085ea3;
+  --accent-soft: rgba(10, 114, 196, 0.1);
+  --accent-line: rgba(10, 114, 196, 0.28);
+  --ok: #17794a;
+  --warn: #a2620a;
+  --grid-line: rgba(20, 22, 26, 0.055);
+  /* Hero field — tuned independently of text colours so the visual can be
+     legible without dragging body-copy contrast around with it. */
+  --viz-node: #8b939e;
+  --viz-line: #bdb9b1;
+  --shadow-sm: 0 1px 2px rgba(20, 22, 26, 0.05);
+  --shadow-md: 0 8px 24px -12px rgba(20, 22, 26, 0.18);
+  --shadow-lg: 0 24px 60px -30px rgba(20, 22, 26, 0.3);
+  --portrait-filter: grayscale(1) contrast(1.06) brightness(1.02);
+  color-scheme: light;
+  }
+}
+
+/* An explicit choice always wins. */
+[data-theme="light"] {
+  --bg: #faf9f7;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f2f0ec;
+  --surface-3: #e9e6e0;
+  --border: #e2ded7;
+  --border-strong: #cdc8bf;
+  --text: #14161a;
+  --text-muted: #565d66;
+  --text-faint: #868d96;
+  --accent: #0a72c4;
+  --accent-hover: #085ea3;
+  --accent-soft: rgba(10, 114, 196, 0.1);
+  --accent-line: rgba(10, 114, 196, 0.28);
+  --ok: #17794a;
+  --warn: #a2620a;
+  --grid-line: rgba(20, 22, 26, 0.055);
+  /* Hero field — tuned independently of text colours so the visual can be
+     legible without dragging body-copy contrast around with it. */
+  --viz-node: #8b939e;
+  --viz-line: #bdb9b1;
+  --shadow-sm: 0 1px 2px rgba(20, 22, 26, 0.05);
+  --shadow-md: 0 8px 24px -12px rgba(20, 22, 26, 0.18);
+  --shadow-lg: 0 24px 60px -30px rgba(20, 22, 26, 0.3);
+  --portrait-filter: grayscale(1) contrast(1.06) brightness(1.02);
+  color-scheme: light;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-bg-elevated: var(--bg-elevated);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-text: var(--text);
+  --color-muted: var(--text-muted);
+  --color-faint: var(--text-faint);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-ok: var(--ok);
+  --color-warn: var(--warn);
+
+  --font-sans: var(--font-geist), ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", sans-serif;
+  --font-mono: var(--font-mono-jb), ui-monospace, "SFMono-Regular", Menlo,
+    monospace;
+
+  --shadow-card: var(--shadow-md);
+  --shadow-float: var(--shadow-lg);
+
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------- */
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  /* offset for the sticky header when jumping to #anchors */
+  scroll-padding-top: 6rem;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-synthesis-weight: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Theme swap should feel like a dimmer, not a flash. Transitions are added
+   only after first paint (see ThemeSync) to avoid a load-time sweep. */
+[data-theme-ready] body,
+[data-theme-ready] .theme-fade {
+  transition: background-color 320ms var(--ease-out-expo),
+    color 320ms var(--ease-out-expo), border-color 320ms var(--ease-out-expo);
+}
+
+::selection {
+  background: var(--accent-soft);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+/* Typographic rhythm helpers ------------------------------------------------ */
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-faint);
+}
+
+.balance {
+  text-wrap: balance;
+}
+
+.pretty {
+  text-wrap: pretty;
+}
+
+/* Subtle computational grid used behind key sections ------------------------ */
+.grid-field {
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 72px 72px;
+  background-position: center;
+}
+
+/* Hero field mask — vertical on narrow screens, horizontal once the hero
+   splits into a text column and a portrait column. */
+.topo-mask {
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, transparent 46%);
+  mask-image: linear-gradient(to bottom, black 0%, transparent 46%);
+}
+
+@media (min-width: 1024px) {
+  .topo-mask {
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.28) 36%,
+      black 66%
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.28) 36%,
+      black 66%
+    );
+  }
+}
+
+.hairline {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--border-strong) 18%,
+    var(--border-strong) 82%,
+    transparent
+  );
+}
+
+/* Links inside long-form copy ---------------------------------------------- */
+.prose-body a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--accent-line);
+  transition: text-decoration-color 160ms ease;
+}
+.prose-body a:hover {
+  text-decoration-color: var(--accent);
+}
+
+/* Scrollbar ---------------------------------------------------------------- */
+@media (pointer: fine) {
+  ::-webkit-scrollbar {
+    width: 11px;
+    height: 11px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--bg);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-strong);
+    border: 3px solid var(--bg);
+    border-radius: 99px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--text-faint);
+  }
+}
+
+/* Motion --------------------------------------------------------------------
+   Nothing on this site should require motion to be understood. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.45; transform: scale(0.82); }
+}
+
+@keyframes marquee-x {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
