@@ -58,10 +58,10 @@ export const metadata: Metadata = {
     locale: "en_GB",
     images: [
       {
-        url: "/opengraph-image",
-        width: 1200,
-        height: 630,
-        alt: "Solomon Eshun — A search into the unknown",
+        url: "/screenshot.png",
+        width: 2944,
+        height: 1814,
+        alt: "Solomon Eshun portfolio homepage — A search into the unknown",
       },
     ],
   },
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: seo.title,
     description: seo.description,
-    images: ["/opengraph-image"],
+    images: ["/screenshot.png"],
   },
   robots: {
     index: true,
