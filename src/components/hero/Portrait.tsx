@@ -20,6 +20,7 @@ export function Portrait() {
           className="object-contain object-right object-bottom"
           style={{ filter: "var(--portrait-filter)" }}
         />
+        <span aria-hidden className="portrait-edge-blend absolute inset-y-0 left-0 z-10 w-[42%]" />
       </div>
     </div>
   );

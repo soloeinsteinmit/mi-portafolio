@@ -321,13 +321,37 @@ body {
 .portrait-bleed {
   opacity: 0.5;
   -webkit-mask-image:
-    linear-gradient(to left, black 34%, transparent 96%),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 12%,
+      rgba(0, 0, 0, 0.5) 38%,
+      black 68%
+    ),
     linear-gradient(to top, transparent 0%, black 12%);
   -webkit-mask-composite: source-in;
   mask-image:
-    linear-gradient(to left, black 34%, transparent 96%),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      rgba(0, 0, 0, 0.08) 12%,
+      rgba(0, 0, 0, 0.5) 38%,
+      black 68%
+    ),
     linear-gradient(to top, transparent 0%, black 12%);
   mask-composite: intersect;
+}
+
+/* The photograph and the page have slightly different black points. Feather
+   the image edge with the actual page colour so no rectangular seam survives
+   low-brightness or high-contrast displays. */
+.portrait-edge-blend {
+  background: linear-gradient(
+    to right,
+    var(--bg) 0%,
+    color-mix(in srgb, var(--bg) 82%, transparent) 30%,
+    transparent 100%
+  );
 }
 
 .page-art {
