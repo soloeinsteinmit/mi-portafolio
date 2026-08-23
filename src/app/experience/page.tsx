@@ -117,7 +117,7 @@ export default function ExperiencePage() {
         </div>
       </Section>
 
-      <Section>
+      <Section id="capabilities">
         <Reveal className="mb-10">
           <h2 className="text-2xl font-semibold tracking-tight text-text">Capabilities</h2>
           <p className="mt-2 max-w-2xl text-[15px] text-muted">
@@ -128,18 +128,18 @@ export default function ExperiencePage() {
           {skills.map((group, i) => (
             <Reveal key={group.name} delay={i} className="rounded-xl border border-border bg-surface p-6">
               <h3 className="label mb-4">{group.name}</h3>
-              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3">
+              <ul className="grid grid-cols-1 gap-x-6 gap-y-3 sm:grid-cols-2">
                 {group.items.map((s) => (
                   <li
                     key={s.name}
-                    className={`flex items-center gap-2 text-[13px] ${DEPTH_STYLE[s.depth]}`}
-                    title={s.depth === "core" ? "Core" : s.depth === "working" ? "Working" : "Familiar"}
+                    className={`flex min-w-0 items-start gap-2.5 text-[13px] ${DEPTH_STYLE[s.depth]}`}
+                    title={`${s.name} · ${s.depth === "core" ? "Core" : s.depth === "working" ? "Working" : "Familiar"}`}
                   >
                     <TechIcon
                       name={s.name}
-                      className={`size-4 ${s.depth === "familiar" ? "opacity-50" : ""}`}
+                      className={`mt-0.5 size-4 ${s.depth === "familiar" ? "opacity-50" : ""}`}
                     />
-                    <span className="truncate">{s.name}</span>
+                    <span className="min-w-0 leading-snug break-words">{s.name}</span>
                   </li>
                 ))}
               </ul>
