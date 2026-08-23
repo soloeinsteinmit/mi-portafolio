@@ -12,7 +12,7 @@ const TAGS = ["ML", "Data", "LLMs", "Systems", "Physical AI", "Agentic AI"];
  */
 export function Hero() {
   return (
-    <section className="relative isolate flex min-h-[92svh] flex-col justify-end overflow-hidden pt-28 pb-14 md:pb-20">
+    <section className="relative isolate flex min-h-svh flex-col justify-end overflow-hidden pt-28 pb-14 md:pb-20">
       <PageArt variant="binary" className="page-art hero-art z-[1]" intensity={1.3} />
       <div
         aria-hidden
