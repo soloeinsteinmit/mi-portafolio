@@ -109,7 +109,6 @@ const jsonLd = {
       email: `mailto:${site.email}`,
       url: site.url,
       image: `${site.url}/img/hero-unknown-v2.png`,
-      address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
       sameAs: site.socials.filter((s) => s.href.startsWith("http")).map((s) => s.href),
       knowsAbout: [
         "MLOps",

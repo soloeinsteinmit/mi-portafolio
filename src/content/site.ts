@@ -5,7 +5,6 @@ export const site = {
   positioning: "AI & Data Systems Engineer building reliable intelligent systems.",
   supporting:
     "Production ML and data platforms, agentic systems, financial ML, and applied research.",
-  location: "Accra, Ghana",
   email: "solomoneshun373@gmail.com",
   url: "https://solomoneshun.vercel.app",
   cv: "/SolomonEshun_Resume_AI_ML_Engineer.pdf",
