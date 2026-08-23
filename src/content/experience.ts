@@ -41,7 +41,7 @@ export const experience: Experience[] = [
     roles: [
       { title: "Founding Machine Learning Engineer (R&D)", period: "Oct 2025 — Present" },
     ],
-    location: "Part-time remote",
+    location: "Accra, Ghana · Part-time remote",
     period: "Oct 2025 — Present",
     summary:
       "Building the ML and intelligence layer for FX-risk decision support for African businesses.",
@@ -58,7 +58,7 @@ export const experience: Experience[] = [
     organisation: "MinoHealth AI Labs",
     orgUrl: "https://minohealth.ai/",
     roles: [{ title: "Machine Learning Engineer", period: "Oct 2024 — Dec 2025" }],
-    location: "Ghana",
+    location: "Accra, Ghana",
     period: "Oct 2024 — Dec 2025",
     summary:
       "Architected autonomous, tool-using research systems and the distributed infrastructure they run on.",
