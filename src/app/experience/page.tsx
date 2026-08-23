@@ -64,49 +64,54 @@ export default function ExperiencePage() {
               <p className="label">Databricks certification path</p>
             </Reveal>
 
-            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {certifications.map((c) => (
-              <Reveal
-                key={c.name}
-                as="article"
-                className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface"
-              >
-                {c.image ? (
-                  <div className="relative aspect-[4/3] border-b border-border bg-[#f7f5f2]">
-                    <Image
-                      src={c.image}
-                      alt={`${c.name} certificate issued to Solomon Eshun`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-                      className="object-contain p-3"
-                    />
-                  </div>
-                ) : null}
-                <div className="flex flex-1 flex-col p-6">
-                  <p className="text-[16px] leading-snug font-medium text-text">{c.name}</p>
-                  <p className="mt-2 font-mono text-[11px] text-faint">
-                    {c.issuer} · Issued {c.issued}
-                    {c.expires ? ` · Valid through ${c.expires}` : ""}
-                  </p>
-                  {c.credentialId ? (
-                    <p className="mt-1 font-mono text-[11px] text-faint">
-                      Credential ID {c.credentialId}
+            <div className="space-y-4">
+              {certifications.map((c) => (
+                <Reveal
+                  key={c.name}
+                  as="article"
+                  className="grid min-h-44 grid-cols-[minmax(112px,34%)_1fr] overflow-hidden rounded-xl border border-border bg-surface sm:min-h-56 sm:grid-cols-[minmax(260px,36%)_1fr]"
+                >
+                  {c.image ? (
+                    <div className="relative min-h-full border-r border-border bg-[#f7f5f2]">
+                      <Image
+                        src={c.image}
+                        alt={`${c.name} certificate issued to Solomon Eshun`}
+                        fill
+                        sizes="(max-width: 640px) 34vw, 36vw"
+                        className="object-contain p-2.5 sm:p-5"
+                      />
+                    </div>
+                  ) : null}
+                  <div className="flex min-w-0 flex-col p-4 sm:p-7">
+                    <div className="label mb-3 text-accent">Verified credential</div>
+                    <p className="text-[15px] leading-snug font-medium text-text sm:text-lg">
+                      {c.name}
                     </p>
-                  ) : null}
-                  {c.note ? <p className="mt-3 text-[14px] text-muted">{c.note}</p> : null}
-                  {c.credentialUrl ? (
-                    <a
-                      href={c.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-auto inline-block pt-5 font-mono text-[11.5px] text-accent transition-colors hover:text-accent-hover"
-                    >
-                      verify credential ↗
-                    </a>
-                  ) : null}
-                </div>
-              </Reveal>
-            ))}
+                    <p className="mt-2 font-mono text-[10px] leading-relaxed text-faint sm:text-[11px]">
+                      {c.issuer} · Issued {c.issued}
+                      {c.expires ? ` · Valid through ${c.expires}` : ""}
+                    </p>
+                    {c.credentialId ? (
+                      <p className="mt-1 font-mono text-[10px] text-faint sm:text-[11px]">
+                        Credential ID {c.credentialId}
+                      </p>
+                    ) : null}
+                    {c.note ? (
+                      <p className="pretty mt-3 hidden text-[14px] text-muted sm:block">{c.note}</p>
+                    ) : null}
+                    {c.credentialUrl ? (
+                      <a
+                        href={c.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-auto inline-block pt-4 font-mono text-[10.5px] text-accent transition-colors hover:text-accent-hover sm:text-[11.5px]"
+                      >
+                        verify credential ↗
+                      </a>
+                    ) : null}
+                  </div>
+                </Reveal>
+              ))}
             </div>
           </div>
         </div>

@@ -95,22 +95,26 @@ export default function Home() {
           <aside className="lg:pt-2">
             <Reveal>
               <h3 className="label mb-4">Certification</h3>
-              {certifications.map((c) => (
-                <div key={c.name} className="overflow-hidden rounded-xl border border-border bg-surface">
+              <div className="space-y-3">
+                {certifications.map((c) => (
+                <div
+                  key={c.name}
+                  className="grid min-h-36 grid-cols-[84px_1fr] overflow-hidden rounded-xl border border-border bg-surface"
+                >
                   {c.image ? (
-                    <div className="relative aspect-[4/3] border-b border-border bg-[#f7f5f2]">
+                    <div className="relative border-r border-border bg-[#f7f5f2]">
                       <Image
                         src={c.image}
                         alt={`${c.name} certificate issued to Solomon Eshun`}
                         fill
-                        sizes="260px"
-                        className="object-contain p-2"
+                        sizes="84px"
+                        className="object-contain p-1.5"
                       />
                     </div>
                   ) : null}
-                  <div className="p-5">
-                    <p className="text-[15px] leading-snug font-medium text-text">{c.name}</p>
-                    <p className="mt-2 font-mono text-[11px] text-faint">
+                  <div className="flex min-w-0 flex-col p-4">
+                    <p className="text-[13.5px] leading-snug font-medium text-text">{c.name}</p>
+                    <p className="mt-2 font-mono text-[10px] leading-relaxed text-faint">
                       {c.issuer} · {c.issued}
                       {c.expires ? ` — ${c.expires}` : ""}
                     </p>
@@ -119,14 +123,15 @@ export default function Home() {
                         href={c.credentialUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="mt-3 inline-block font-mono text-[11px] text-accent transition-colors hover:text-accent-hover"
+                        className="mt-auto inline-block pt-3 font-mono text-[10.5px] text-accent transition-colors hover:text-accent-hover"
                       >
                         verify ↗
                       </a>
                     ) : null}
                   </div>
                 </div>
-              ))}
+                ))}
+              </div>
               <Link
                 href="/experience"
                 className="group mt-5 inline-flex items-center gap-2 font-mono text-xs text-muted transition-colors hover:text-accent"

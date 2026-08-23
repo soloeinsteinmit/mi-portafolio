@@ -215,7 +215,7 @@ export function CommandPalette({
             transition={{ duration: 0.2, ease: [0.16, 1, 0.3, 1] }}
             className="relative w-full max-w-lg overflow-hidden rounded-xl border border-border-strong bg-bg-elevated shadow-float"
           >
-            <div className="flex items-center gap-3 border-b border-border px-4">
+            <div className="flex items-center gap-3 border-b border-border px-4 transition-colors focus-within:border-accent/35 focus-within:bg-surface/35">
               <span className="font-mono text-xs text-accent">›</span>
               <input
                 ref={inputRef}
@@ -223,7 +223,7 @@ export function CommandPalette({
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search work, research, pages…"
                 aria-label="Search"
-                className="h-12 flex-1 bg-transparent text-sm text-text outline-none placeholder:text-faint"
+                className="command-palette-input h-12 flex-1 bg-transparent text-sm text-text outline-none placeholder:text-faint"
               />
               <kbd className="rounded border border-border bg-surface-2 px-1.5 py-px font-mono text-[10px] text-faint">
                 esc

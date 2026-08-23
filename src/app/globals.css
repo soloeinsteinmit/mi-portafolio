@@ -173,6 +173,14 @@ body {
   border-radius: 3px;
 }
 
+/* The command palette opens with its input focused. Keep that state visible
+   through the containing search row instead of drawing a large blue rectangle
+   around the text field itself. */
+.command-palette-input:focus-visible {
+  outline: none;
+  box-shadow: none;
+}
+
 /* Typographic rhythm helpers ------------------------------------------------ */
 
 .font-mono {
