@@ -108,12 +108,12 @@ export const publicationGroups = [
   {
     key: "systems" as const,
     label: "Data & AI Systems Research",
-    note: "First-author work on making production pipelines recoverable.",
+    note: "First-author work on recovering production pipelines without a human in the loop.",
   },
   {
     key: "agentic-applications" as const,
     label: "Intelligent Agent Research Applications",
-    note: "Downstream output from the autonomous research system I architected.",
+    note: "Downstream results produced by the autonomous research system I architected.",
   },
 ];
 

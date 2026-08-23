@@ -128,7 +128,7 @@ export function Nav({ onOpenPalette }: { onOpenPalette: () => void }) {
             className="border-b border-border bg-bg/95 backdrop-blur-xl md:hidden"
           >
             <ul className="mx-auto max-w-6xl px-5 py-3">
-              {[...site.nav, { label: "Field Notes", href: "/gallery" }, { label: "Contact", href: "/contact" }].map(
+              {site.nav.map(
                 (item) => (
                   <li key={item.href} className="border-b border-border/60 last:border-0">
                     <Link

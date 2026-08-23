@@ -40,7 +40,7 @@ export type Tier = 1 | 2 | 3;
 export type Project = {
   slug: string;
   title: string;
-  /** One line, shown under the title on cards and case-study headers. */
+  /** One line, shown under the title on compact cards. */
   tagline: string;
   org?: string;
   orgUrl?: string;
@@ -55,25 +55,12 @@ export type Project = {
   order: number;
   /** Card copy. Two sentences at most. */
   summary: string;
-  /** Case study, in evidence order. All optional — partial pages still render. */
-  problem?: string;
-  system?: string;
-  contribution?: string[];
-  decisions?: string[];
-  /** Rendered as a simple left-to-right architecture flow diagram. */
-  flow?: { label: string; note?: string }[];
-  outcomes?: string[];
-  /** Where the work stands today, in plain language. */
-  currentStatus?: string;
-  /** Rendered as a bounded disclosure/limitation notice. */
-  disclosure?: string;
+  /** Tools used to build and run it — not model families. */
   stack: string[];
+  /** First link is the card-wide target. */
   links?: ProjectLink[];
-  /** Optional. Cards and case studies fall back to a generated visual. */
+  /** Optional. Falls back to generated artwork keyed on the slug. */
   thumbnail?: string;
-  image?: string;
-  /** DOIs / arXiv ids of publications produced by or about this system. */
-  relatedPublications?: string[];
 };
 
 export type Publication = {
@@ -108,6 +95,8 @@ export type Experience = {
 };
 
 export type Talk = {
+  /** Optional. Reuse a gallery photo or drop a new file in /public. */
+  image?: string;
   title: string;
   role: string;
   organisation: string;
@@ -124,6 +113,9 @@ export type Certification = {
   issued: string;
   expires?: string;
   credentialUrl?: string;
+  credentialId?: string;
+  /** Optional badge/screenshot: drop a file in /public and set the path. */
+  image?: string;
   verified: boolean;
   note?: string;
 };

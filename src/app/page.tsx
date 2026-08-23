@@ -15,6 +15,7 @@ import { talks } from "@/content/talks";
 import { writing } from "@/content/writing";
 import { about } from "@/content/about";
 import { site } from "@/content/site";
+import { CodePlate } from "@/components/fun/CodePlate";
 
 export default function Home() {
   const featured = byTier(1);
@@ -31,7 +32,7 @@ export default function Home() {
         <SectionHeader
           index="01"
           title="Selected Work"
-          intro="Five systems, ordered by what they prove rather than when they happened."
+          intro="Making computers go beep boop—reliably, at scale, and under real-world constraints."
           action={{ label: "All work", href: "/work" }}
         />
         <div>
@@ -46,7 +47,7 @@ export default function Home() {
         <SectionHeader
           index="02"
           title="Research"
-          intro="One first-author paper on making pipelines recoverable, and four publications produced by an intelligent system I architected."
+          intro="Evidence, uncertainty, and the boundary between machine inference and human judgement."
           action={{ label: "All publications", href: "/research" }}
         />
         <div className="grid gap-4">
@@ -68,12 +69,25 @@ export default function Home() {
         </Reveal>
       </Section>
 
+      {/* Epigraph ---------------------------------------------------------- */}
+      <Section className="border-t border-border py-16 md:py-20">
+        <Reveal className="mb-8">
+          <p className="label flex items-center gap-3">
+            <span className="text-accent">—</span>
+            <span>Epigraphs, compiled</span>
+          </p>
+        </Reveal>
+        <Reveal delay={1}>
+          <CodePlate />
+        </Reveal>
+      </Section>
+
       {/* 03 — Experience --------------------------------------------------- */}
       <Section id="experience">
         <SectionHeader
           index="03"
           title="Experience"
-          intro="Production systems in Germany, R&D in Accra, research in between."
+          intro="Talk is cheap. Here is what made it into production."
           action={{ label: "Full history", href: "/experience" }}
         />
         <div className="grid gap-14 lg:grid-cols-[1fr_260px] lg:gap-16">
@@ -83,16 +97,21 @@ export default function Home() {
               <h3 className="label mb-4">Certification</h3>
               {certifications.map((c) => (
                 <div key={c.name} className="rounded-xl border border-border bg-surface p-5">
-                  <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-[var(--ok)]/30 px-2.5 py-1 font-mono text-[10px] tracking-[0.1em] text-[var(--ok)] uppercase">
-                    <span className="size-1.5 rounded-full bg-[var(--ok)]" />
-                    Verified
-                  </div>
                   <p className="text-[15px] leading-snug font-medium text-text">{c.name}</p>
                   <p className="mt-2 font-mono text-[11px] text-faint">
                     {c.issuer} · {c.issued}
                     {c.expires ? ` — ${c.expires}` : ""}
                   </p>
-                  {c.note ? <p className="mt-3 text-[13px] text-muted">{c.note}</p> : null}
+                  {c.credentialUrl ? (
+                    <a
+                      href={c.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-block font-mono text-[11px] text-accent transition-colors hover:text-accent-hover"
+                    >
+                      verify ↗
+                    </a>
+                  ) : null}
                 </div>
               ))}
               <Link
@@ -111,8 +130,8 @@ export default function Home() {
       <Section id="systems" className="border-y border-border bg-surface/40">
         <SectionHeader
           index="04"
-          title="More Systems"
-          intro="Supporting work — agents in production, computer vision in the field, and a few things built to understand them better."
+          title="Supporting Work"
+          intro="Side quests in agents, computer vision, and learning systems."
           action={{ label: "Including the archive", href: "/work" }}
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -127,7 +146,7 @@ export default function Home() {
         <SectionHeader
           index="05"
           title="Writing"
-          intro="Occasional notes — what held up, and what was just a flattering result."
+          intro="Notes from the lab: methods, results, and useful failures."
           action={{ label: "All writing", href: "/writing" }}
         />
         <div className="grid gap-4 md:grid-cols-2">
@@ -179,48 +198,62 @@ export default function Home() {
       <Section id="talks" className="border-y border-border bg-surface/40">
         <SectionHeader
           index="06"
-          title="Talks & Community"
-          intro="Workshops, teaching and the occasional room full of people learning to build agents."
+          title="Talks & Teaching"
+          intro="Ideas tested out loud, one question at a time."
           action={{ label: "All talks", href: "/talks" }}
         />
-        <ul className="grid gap-px overflow-hidden rounded-xl border border-border bg-border md:grid-cols-2">
+        <ul className="grid gap-5 sm:grid-cols-2">
           {talks.slice(0, 4).map((t, i) => (
-            <Reveal as="li" key={t.title} delay={i} className="bg-surface p-6">
-              <div className="label mb-3 flex items-center gap-2.5">
-                <span className="text-accent">{t.role}</span>
-                <span className="text-border-strong">·</span>
-                <span>{t.date}</span>
-              </div>
-              <h3 className="pretty text-base leading-snug font-semibold text-text">
-                {t.title}
-              </h3>
-              <p className="mt-1.5 text-[13px] text-faint">
-                {t.organisation}
-                {t.venue ? ` · ${t.venue}` : ""}
-              </p>
-              <p className="pretty mt-3 text-[14px] leading-relaxed text-muted">{t.summary}</p>
+            <Reveal as="li" key={t.title} delay={i}>
+              <a
+                href={t.links?.[0]?.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block"
+              >
+                <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-border bg-surface-2">
+                  {t.image ? (
+                    <Image
+                      src={t.image}
+                      alt={t.title}
+                      fill
+                      sizes="(max-width: 640px) 100vw, 45vw"
+                      className="object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
+                    />
+                  ) : null}
+                </div>
+                <div className="label mt-3 flex items-center gap-2.5">
+                  <span className="text-accent">{t.role}</span>
+                  <span className="text-border-strong">·</span>
+                  <span>{t.date}</span>
+                </div>
+                <h3 className="pretty mt-1.5 text-base leading-snug font-semibold text-text transition-colors group-hover:text-accent">
+                  {t.title}
+                </h3>
+                <p className="mt-1 text-[13px] text-faint">
+                  {t.organisation}
+                  {t.venue ? ` · ${t.venue}` : ""}
+                </p>
+              </a>
             </Reveal>
           ))}
         </ul>
       </Section>
 
-      {/* 07 — About -------------------------------------------------------- */}
+      {/* 07 — About ------------------------------------------------------- */}
       <Section id="about">
-        <div className="grid gap-12 lg:grid-cols-[300px_1fr] lg:gap-20">
+        <div className="grid gap-10 lg:grid-cols-[260px_1fr] lg:gap-16">
           <Reveal>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-border bg-surface-2 lg:aspect-[3/4]">
+            <div className="relative aspect-square overflow-hidden rounded-xl border border-border bg-surface-2">
               <Image
                 src="/img/speaking.jpeg"
                 alt="Solomon Eshun presenting an AI agents workshop at the Ghana Data Science Summit"
                 fill
-                sizes="(max-width: 1024px) 100vw, 300px"
+                sizes="(max-width: 1024px) 100vw, 260px"
                 className="object-cover object-[45%_30%]"
                 style={{ filter: "var(--portrait-filter)" }}
               />
             </div>
-            <p className="mt-3 font-mono text-[10px] tracking-[0.1em] text-faint uppercase">
-              IndabaX Ghana · 2026
-            </p>
           </Reveal>
 
           <div>
@@ -230,27 +263,14 @@ export default function Home() {
               <span>About</span>
             </div>
             <Reveal>
-              <p className="balance text-[clamp(1.35rem,2.6vw,1.9rem)] leading-[1.22] font-medium text-text">
+              <p className="balance text-[clamp(1.3rem,2.5vw,1.8rem)] leading-[1.22] font-medium text-text">
                 {about.lead}
               </p>
             </Reveal>
             <Reveal delay={1}>
-              <div className="prose-body mt-6 max-w-2xl space-y-4">
-                {about.paragraphs.slice(0, 2).map((p) => (
-                  <p key={p.slice(0, 24)} className="pretty text-[15px] leading-relaxed text-muted">
-                    {p}
-                  </p>
-                ))}
-              </div>
-            </Reveal>
-            <Reveal delay={2}>
-              <Link
-                href="/about"
-                className="group mt-6 inline-flex items-center gap-2 font-mono text-xs text-text transition-colors hover:text-accent"
-              >
-                More about me
-                <span className="transition-transform duration-300 group-hover:translate-x-1">→</span>
-              </Link>
+              <p className="pretty mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
+                {about.short}
+              </p>
             </Reveal>
           </div>
         </div>
@@ -261,8 +281,7 @@ export default function Home() {
         <Reveal className="grid-field rounded-2xl border border-border bg-surface/60 p-8 md:p-14">
           <div className="label mb-5">Contact</div>
           <h2 className="balance max-w-2xl text-[clamp(1.7rem,4vw,2.8rem)] leading-[1.08] font-semibold tracking-tight text-text">
-            If you are working on reliable intelligent systems, I would like to
-            hear about it.
+Got a problem nobody has cracked yet?
           </h2>
           <p className="pretty mt-5 max-w-xl text-[15px] leading-relaxed text-muted">
             {about.seeking}

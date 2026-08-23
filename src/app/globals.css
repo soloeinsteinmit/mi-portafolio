@@ -9,29 +9,31 @@
 --------------------------------------------------------------------------- */
 :root,
 [data-theme="dark"] {
-  --bg: #0b0c0e;
-  --bg-elevated: #121418;
-  --surface: #121418;
-  --surface-2: #16191e;
-  --surface-3: #1c2026;
-  --border: #24282e;
-  --border-strong: #363c44;
-  --text: #e9ebee;
-  --text-muted: #9aa1aa;
-  --text-faint: #6a717a;
+  /* Near-black, neutral. Bottoms out just above #000 so grain and hairlines
+     still have somewhere to sit. */
+  --bg: #050505;
+  --bg-elevated: #101010;
+  --surface: #0b0b0b;
+  --surface-2: #111111;
+  --surface-3: #191919;
+  --border: #1e1e1e;
+  --border-strong: #333333;
+  --text: #ededed;
+  --text-muted: #9a9a9a;
+  --text-faint: #6a6a6a;
   --accent: #5cc8ff;
   --accent-hover: #8ad9ff;
-  --accent-soft: rgba(92, 200, 255, 0.12);
-  --accent-line: rgba(92, 200, 255, 0.32);
+  --accent-soft: rgba(92, 200, 255, 0.09);
+  --accent-line: rgba(92, 200, 255, 0.3);
   --ok: #4ade80;
   --warn: #f0b429;
-  --grid-line: rgba(233, 235, 238, 0.045);
-  --viz-node: #9aa4b0;
-  --viz-line: #4d5661;
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
-  --shadow-md: 0 10px 30px -14px rgba(0, 0, 0, 0.7);
-  --shadow-lg: 0 30px 70px -34px rgba(0, 0, 0, 0.85);
-  --portrait-filter: grayscale(1) contrast(1.1) brightness(0.92);
+  --grid-line: rgba(255, 255, 255, 0.035);
+  --viz-node: #8a8a8a;
+  --viz-line: #3a3a3a;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.6);
+  --shadow-md: 0 10px 30px -14px rgba(0, 0, 0, 0.85);
+  --shadow-lg: 0 30px 70px -34px rgba(0, 0, 0, 0.95);
+  --portrait-filter: grayscale(1) contrast(1.1) brightness(0.98);
   color-scheme: dark;
 }
 
@@ -134,7 +136,8 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* No global smooth scroll: it makes route-change scroll restoration animate,
+     and an interrupted animation lands mid-page. Anchor jumps opt in instead. */
   /* offset for the sticky header when jumping to #anchors */
   scroll-padding-top: 6rem;
   -webkit-text-size-adjust: 100%;
@@ -224,6 +227,178 @@ body {
   }
 }
 
+/* Tagline typewriter. Monospace so the `ch` unit is exact, pure CSS so there
+   is no state to hydrate. Wraps and stops animating on small screens. */
+.typewriter {
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  vertical-align: bottom;
+  width: 53ch;
+  border-right: 2px solid var(--accent);
+  animation: typing 1.9s steps(53, end) both, caret 1.05s steps(1) infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 53ch; }
+}
+
+@keyframes caret {
+  50% { border-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter {
+    animation: none;
+    border-right-color: transparent;
+  }
+}
+
+@media (max-width: 40rem) {
+  .typewriter {
+    width: auto;
+    white-space: normal;
+    overflow: visible;
+    animation: none;
+    border-right: 0;
+  }
+}
+
+/* Page art fades away from the text column and dissolves before the section
+   ends — it should never look clipped by a container edge. */
+/* Film grain. Sits above the page so it reads as paper texture; kept low
+   enough that you notice the surface, not the effect. */
+.grain {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  z-index: 100;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.016'/%3E%3C/svg%3E");
+}
+
+[data-theme="light"] .grain {
+  opacity: 0.6;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .grain {
+    animation: grain 8s steps(10) infinite;
+  }
+}
+
+@keyframes grain {
+  0%, 100% { transform: translate(0, 0); }
+  10% { transform: translate(-5%, -10%); }
+  20% { transform: translate(-15%, 5%); }
+  30% { transform: translate(7%, -25%); }
+  40% { transform: translate(-5%, 25%); }
+  50% { transform: translate(-15%, 10%); }
+  60% { transform: translate(15%, 0%); }
+  70% { transform: translate(0%, 15%); }
+  80% { transform: translate(3%, 35%); }
+  90% { transform: translate(-10%, 10%); }
+}
+
+/* Block caret for the live status line. */
+.caret::after {
+  content: "\2588";
+  margin-left: 0.15em;
+  color: var(--accent);
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  50% { opacity: 0; }
+}
+
+/* The hero portrait dissolves on three sides so it reads as part of the page
+   rather than a photo dropped on top of it. */
+.portrait-bleed {
+  opacity: 0.5;
+  -webkit-mask-image:
+    linear-gradient(to left, black 34%, transparent 96%),
+    linear-gradient(to top, transparent 0%, black 12%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(to left, black 34%, transparent 96%),
+    linear-gradient(to top, transparent 0%, black 12%);
+  mask-composite: intersect;
+}
+
+.page-art {
+  -webkit-mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 74%);
+  mask-image: linear-gradient(to bottom, black 0%, black 30%, transparent 74%);
+  opacity: 0.55;
+}
+
+@media (min-width: 1024px) {
+  .hero-art {
+    opacity: 0.9;
+    -webkit-mask-image:
+      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 32%, black 66%),
+      linear-gradient(to bottom, black 0%, black 46%, transparent 92%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 32%, black 66%),
+      linear-gradient(to bottom, black 0%, black 46%, transparent 92%);
+    mask-composite: intersect;
+  }
+}
+
+.quote-fade {
+  animation: quote-in 700ms var(--ease-out-expo) both;
+}
+
+@keyframes quote-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Generated card art loops gently so the grid is never fully static. */
+@media (prefers-reduced-motion: no-preference) {
+  .tile-art {
+    animation: tile-drift 22s ease-in-out infinite;
+  }
+  .tile-art .tile-hot {
+    animation: tile-pulse 4.6s ease-in-out infinite;
+    transform-box: fill-box;
+    transform-origin: center;
+  }
+  .tile-art .tile-hot:nth-of-type(2n) { animation-delay: -1.6s; }
+  .tile-art .tile-hot:nth-of-type(3n) { animation-delay: -3.1s; }
+  .tile-art .tile-wave {
+    animation: wave-slide 26s linear infinite;
+  }
+}
+
+@keyframes tile-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1.03); }
+  50% { transform: translate3d(-1.2%, -1.4%, 0) scale(1.07); }
+}
+
+@keyframes tile-pulse {
+  0%, 100% { opacity: 0.45; transform: scale(0.9); }
+  50% { opacity: 1; transform: scale(1.15); }
+}
+
+@keyframes wave-slide {
+  from { transform: translateX(0); }
+  to { transform: translateX(-480px); }
+}
+
+/* Keeps a card grid on an even rhythm regardless of copy length. */
+.clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
 .hairline {
   height: 1px;
   background: linear-gradient(
@@ -270,9 +445,6 @@ body {
 /* Motion --------------------------------------------------------------------
    Nothing on this site should require motion to be understood. */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
   *,
   *::before,
   *::after {

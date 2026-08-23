@@ -3,6 +3,7 @@ import type { Talk } from "./types";
 /** High-signal items only. Wording matches the evidence: presenter, not invited speaker. */
 export const talks: Talk[] = [
   {
+    image: "/gallery/indaba2026_1.jpeg",
     title: "Building Useful AI Agents with Agno + OpenRouter",
     role: "Workshop Presenter",
     organisation: "Ghana Data Science Summit / IndabaX Ghana",
@@ -19,6 +20,7 @@ export const talks: Talk[] = [
     ],
   },
   {
+    image: "/gallery/3.jpg",
     title: "Software Engineering in the Age of AI",
     role: "Presenter",
     organisation: "Tech & Beyond Expo",
@@ -36,6 +38,7 @@ export const talks: Talk[] = [
     ],
   },
   {
+    image: "/gallery/ind1.jpg",
     title: "LoRA Fine-Tuning & Vision-Language Models",
     role: "Facilitator",
     organisation: "Ghana Data Science Summit / IndabaX 2025",
@@ -53,6 +56,7 @@ export const talks: Talk[] = [
     ],
   },
   {
+    image: "/gallery/glb4.jpeg",
     title: "Global Code 3-Week Bootcamp",
     role: "Instructor",
     organisation: "Global Code",
@@ -70,6 +74,7 @@ export const talks: Talk[] = [
     ],
   },
   {
+    image: "/gallery/run1.jpeg",
     title: "Runmila AI Institute Summer Camp",
     role: "Instructor",
     organisation: "Runmila AI Institute",

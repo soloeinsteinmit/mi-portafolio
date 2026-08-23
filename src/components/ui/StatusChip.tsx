@@ -63,10 +63,6 @@ export function StatusChip({
     <span
       className={`inline-flex items-center gap-1.5 rounded-full border ${s.ring} bg-surface/60 px-2.5 py-1 font-mono text-[10px] tracking-[0.1em] uppercase ${s.text} ${className}`}
     >
-      <span
-        className={`size-1.5 rounded-full ${s.dot}`}
-        style={s.pulse ? { animation: "pulse-dot 2.4s ease-in-out infinite" } : undefined}
-      />
       {s.label}
       {note ? <span className="text-faint normal-case tracking-normal">· {note}</span> : null}
     </span>

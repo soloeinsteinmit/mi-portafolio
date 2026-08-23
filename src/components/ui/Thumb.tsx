@@ -27,6 +27,13 @@ type Art =
  */
 const cache = new Map<string, Art>();
 
+/**
+ * Coordinates are rounded before they reach the DOM. Math.sin/cos may differ in
+ * the last bit between the Node build and the browser, and full-precision
+ * floats in SVG attributes turn that into a hydration mismatch.
+ */
+const r2 = (n: number) => Math.round(n * 100) / 100;
+
 function buildArt(seed: string, forced?: Motif): Art {
   const key = `${seed}::${forced ?? ""}`;
   const hit = cache.get(key);
@@ -45,9 +52,9 @@ function buildArt(seed: string, forced?: Motif): Art {
       for (let r = 0; r < rows; r++) {
         if (rand() < 0.18) continue;
         nodes.push({
-          x: ((c + 0.5) / cols) * W + (rand() - 0.5) * 44,
-          y: ((r + 0.5) / rows) * H + (rand() - 0.5) * 40,
-          r: 2 + rand() * 2.6,
+          x: r2(((c + 0.5) / cols) * W + (rand() - 0.5) * 44),
+          y: r2(((r + 0.5) / rows) * H + (rand() - 0.5) * 40),
+          r: r2(2 + rand() * 2.6),
           hot: false,
         });
       }
@@ -82,10 +89,10 @@ function buildArt(seed: string, forced?: Motif): Art {
         const dx = Math.cos(angle) * len;
         const dy = Math.sin(angle) * len;
         segs.push({
-          x1: x - dx / 2,
-          y1: y - dy / 2,
-          x2: x + dx / 2,
-          y2: y + dy / 2,
+          x1: r2(x - dx / 2),
+          y1: r2(y - dy / 2),
+          x2: r2(x + dx / 2),
+          y2: r2(y + dy / 2),
           hot: Math.abs(Math.sin(c * a + r * b)) > 0.93,
         });
       }
@@ -104,7 +111,7 @@ function buildArt(seed: string, forced?: Motif): Art {
         const yy = y + Math.sin((k / 32) * Math.PI * freq + off) * amp;
         return `${k === 0 ? "M" : "L"}${x.toFixed(1)},${yy.toFixed(1)}`;
       }).join(" ");
-      lanes.push({ d, y, hot: i === Math.floor(count / 2) });
+      lanes.push({ d, y: r2(y), hot: i === Math.floor(count / 2) });
     }
     art = { kind, lanes };
   } else {
@@ -125,7 +132,7 @@ function buildArt(seed: string, forced?: Motif): Art {
         .join(" ");
       return { d: `${d} Z` };
     });
-    art = { kind: "contour", cx, cy, rings };
+    art = { kind: "contour", cx: r2(cx), cy: r2(cy), rings };
   }
 
   cache.set(key, art);
@@ -151,7 +158,7 @@ export function GeneratedThumb({
   return (
     <svg
       viewBox={`0 0 ${W} ${H}`}
-      className={className}
+      className={`tile-art ${className ?? ""}`}
       preserveAspectRatio="xMidYMid slice"
       role="presentation"
       aria-hidden="true"
@@ -200,7 +207,7 @@ export function GeneratedThumb({
             n.hot ? (
               <g key={i}>
                 <circle cx={n.x} cy={n.y} r={n.r * 3.4} fill="var(--accent)" opacity="0.14" />
-                <circle cx={n.x} cy={n.y} r={n.r + 0.6} fill="var(--accent)" />
+                <circle className="tile-hot" cx={n.x} cy={n.y} r={n.r + 0.6} fill="var(--accent)" />
               </g>
             ) : (
               <circle key={i} cx={n.x} cy={n.y} r={n.r} fill="var(--viz-node)" opacity="0.85" />
@@ -243,6 +250,7 @@ export function GeneratedThumb({
           {art.lanes.map((l, i) => (
             <circle
               key={`n-${i}`}
+              className={l.hot ? "tile-hot" : undefined}
               cx={W * (0.2 + i * 0.15)}
               cy={l.y}
               r={l.hot ? 4 : 2.6}
@@ -264,7 +272,7 @@ export function GeneratedThumb({
               opacity={i === 2 ? 1 : 0.85 - i * 0.06}
             />
           ))}
-          <circle cx={art.cx} cy={art.cy} r="3.5" fill="var(--accent)" />
+          <circle className="tile-hot" cx={art.cx} cy={art.cy} r="3.5" fill="var(--accent)" />
         </g>
       ) : null}
     </svg>

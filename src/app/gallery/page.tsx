@@ -1,21 +1,24 @@
-import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { GalleryGrid } from "@/components/gallery/GalleryGrid";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
-  title: "Field Notes",
+export const metadata = pageMetadata({
+  title: "Gallery",
   description:
     "Photographs from workshops, field work, conferences and late-night building.",
-};
+  path: "/gallery",
+});
 
 export default function GalleryPage() {
   return (
     <>
       <PageHeader
-        eyebrow="Field Notes"
-        title="The parts that do not fit in a case study."
-        intro="Drone sites in the Bono Region, workshops at IndabaX, a bootcamp at Cape Coast, and a fair amount of work done at hours I would not recommend."
+        eyebrow="Gallery"
+        art="diffusion"
+        figure="Fig. 07 — the field, literally"
+        title="Out in the world🌍."
+        intro="Sites, sessions, and a considerable amount of work conducted at unreasonable hours."
       />
       <Section>
         <GalleryGrid />

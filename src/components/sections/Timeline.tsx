@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
 import { useRef } from "react";
 import type { Experience } from "@/content/types";
@@ -122,15 +121,18 @@ export function Timeline({ items }: { items: Experience[] }) {
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
               {item.relatedProjects.map((slug) => {
                 const p = getProject(slug);
-                if (!p) return null;
+                const href = p?.links?.find((l) => l.href.startsWith("http"))?.href;
+                if (!p || !href) return null;
                 return (
-                  <Link
+                  <a
                     key={slug}
-                    href={`/work/${slug}`}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="font-mono text-[11px] text-faint transition-colors hover:text-accent"
                   >
-                    {p.title} →
-                  </Link>
+                    {p.title} ↗
+                  </a>
                 );
               })}
             </div>

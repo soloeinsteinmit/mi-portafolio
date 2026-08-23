@@ -1,16 +1,17 @@
-import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { FeaturedCard, CompactCard, ArchiveRow } from "@/components/work/ProjectCard";
 import { Reveal } from "@/components/ui/Reveal";
 import { byTier } from "@/content/projects";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Selected Work",
   description:
     "Production data platform and MLOps work, first-author research on self-healing pipelines, the Lumis SDK, FX-risk intelligence R&D, and autonomous research systems.",
-};
+  path: "/work",
+});
 
 export default function WorkPage() {
   const featured = byTier(1);
@@ -21,8 +22,10 @@ export default function WorkPage() {
     <>
       <PageHeader
         eyebrow="Selected Work"
-        title="Systems, in order of what they prove."
-        intro="Each entry follows the same shape: the problem that existed, the system that was built, what I contributed, and what is actually true about its status today. Nothing here is described as finished if it is not."
+        art="orbit"
+        figure="Fig. 02 — systems, held in tension"
+        title="Making computers go beep boop🤖."
+        intro="Systems built to survive contact with real users, real data, and real failure."
       />
 
       <Section>
@@ -50,7 +53,7 @@ export default function WorkPage() {
         <SectionHeader
           index="—"
           title="Earlier Work"
-          intro="Kept for continuity, not for weight. This is where I learned the things the work above assumes."
+          intro="Prior art. Where the assumptions above were first tested."
         />
         <Reveal>
           <div className="border-t border-border">

@@ -53,15 +53,22 @@ export function CommandPalette({
         group: "Pages",
         run: go(n.href),
       })),
-      { id: "nav-gallery", label: "Field Notes", group: "Pages", run: go("/gallery") },
-      { id: "nav-contact", label: "Contact", group: "Pages", run: go("/contact") },
-      ...projects.map((p) => ({
-        id: `proj-${p.slug}`,
-        label: p.title,
-        hint: p.org ?? p.role,
-        group: "Work",
-        run: go(`/work/${p.slug}`),
-      })),
+      { id: "nav-gallery", label: "Gallery", group: "Pages", run: go("/gallery") },
+      ...projects.map((p) => {
+        const href = p.links?.find((l) => l.href.startsWith("http"))?.href;
+        return {
+          id: `proj-${p.slug}`,
+          label: p.title,
+          hint: p.org ?? p.role,
+          group: "Work",
+          run: href
+            ? () => {
+                window.open(href, "_blank", "noopener,noreferrer");
+                onClose();
+              }
+            : go("/work"),
+        };
+      }),
       ...publications.map((p) => ({
         id: `pub-${p.id}`,
         label: p.title,

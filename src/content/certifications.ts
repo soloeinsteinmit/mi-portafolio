@@ -11,6 +11,9 @@ export const certifications: Certification[] = [
     issued: "May 2026",
     expires: "May 2028",
     verified: true,
+    credentialUrl:
+      "https://credentials.databricks.com/cfb933ea-691c-41ef-bc2f-196cf568008a",
+    credentialId: "183882941",
     note: "Advanced data engineering on the Databricks platform.",
   },
 ];

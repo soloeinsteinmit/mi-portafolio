@@ -1,23 +1,26 @@
-import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Tag } from "@/components/ui/Tag";
 import { writing, coverage } from "@/content/writing";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Writing",
   description:
     "Technical notes, build logs and research explainers by Solomon Eshun, plus coverage of systems he built.",
-};
+  path: "/writing",
+});
 
 export default function WritingPage() {
   return (
     <>
       <PageHeader
         eyebrow="Writing"
-        title="Notes, mostly about what broke first."
-        intro="A short shelf, deliberately. I would rather publish something occasionally and mean it than keep a content schedule."
+        art="diffusion"
+        figure="Fig. 06 — ink, finding its shape"
+        title="Notes from the lab📝."
+        intro="What worked, what failed, and what the evidence changed."
       />
 
       <Section>

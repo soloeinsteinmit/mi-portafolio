@@ -1,17 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, JetBrains_Mono } from "next/font/google";
+import { Geist, JetBrains_Mono, Newsreader } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { seo, site } from "@/content/site";
 import { Shell } from "@/components/layout/Shell";
 import { ThemeSync } from "@/components/layout/ThemeSync";
+import { ScrollTop } from "@/components/layout/ScrollTop";
 import { JsonLd } from "@/components/layout/JsonLd";
 import { Footer } from "@/components/layout/Footer";
+import { Grain } from "@/components/fun/Grain";
 import "./globals.css";
 
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
+  display: "swap",
+});
+
+/* A literary serif for headings — the site should read like a journal, not a
+   dashboard. Body stays a neutral sans; data stays mono. */
+const display = Newsreader({
+  variable: "--font-display-serif",
+  subsets: ["latin"],
+  weight: ["300", "400", "500"],
+  style: ["normal", "italic"],
   display: "swap",
 });
 
@@ -23,6 +35,7 @@ const mono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
+  applicationName: `${site.name} Portfolio`,
   title: {
     default: seo.title,
     template: "%s · Solomon Eshun",
@@ -31,7 +44,11 @@ export const metadata: Metadata = {
   keywords: seo.keywords,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  alternates: { canonical: "/" },
+  publisher: site.name,
+  category: "technology",
+  classification: "Personal portfolio, engineering and research",
+  referrer: "origin-when-cross-origin",
+  alternates: { canonical: "/", languages: { "en-GB": "/" } },
   openGraph: {
     type: "website",
     url: site.url,
@@ -39,14 +56,34 @@ export const metadata: Metadata = {
     title: seo.title,
     description: seo.description,
     locale: "en_GB",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Solomon Eshun — A search into the unknown",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: seo.title,
     description: seo.description,
+    images: ["/opengraph-image"],
   },
-  robots: { index: true, follow: true },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: { icon: "/favicon.png", apple: "/favicon.png" },
+  manifest: "/manifest.webmanifest",
 };
 
 export const viewport: Viewport = {
@@ -58,20 +95,47 @@ export const viewport: Viewport = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "Person",
-  name: site.name,
-  alternateName: site.alias,
-  jobTitle: site.role,
-  email: `mailto:${site.email}`,
-  url: site.url,
-  address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
-  sameAs: site.socials.filter((s) => s.href.startsWith("http")).map((s) => s.href),
-  knowsAbout: [
-    "MLOps",
-    "Data engineering",
-    "Agentic AI systems",
-    "Machine learning research",
-    "Distributed systems",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": `${site.url}/#person`,
+      name: site.name,
+      alternateName: site.alias,
+      jobTitle: site.role,
+      description: site.positioning,
+      email: `mailto:${site.email}`,
+      url: site.url,
+      image: `${site.url}/img/hero-unknown-v2.png`,
+      address: { "@type": "PostalAddress", addressLocality: "Accra", addressCountry: "GH" },
+      sameAs: site.socials.filter((s) => s.href.startsWith("http")).map((s) => s.href),
+      knowsAbout: [
+        "MLOps",
+        "Data engineering",
+        "Agentic AI systems",
+        "Machine learning research",
+        "Distributed systems",
+        "Financial machine learning",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${site.url}/#website`,
+      url: site.url,
+      name: `${site.name} Portfolio`,
+      description: seo.description,
+      inLanguage: "en-GB",
+      publisher: { "@id": `${site.url}/#person` },
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": `${site.url}/#profile`,
+      url: site.url,
+      name: seo.title,
+      description: seo.description,
+      isPartOf: { "@id": `${site.url}/#website` },
+      mainEntity: { "@id": `${site.url}/#person` },
+      primaryImageOfPage: { "@type": "ImageObject", url: `${site.url}/img/hero-unknown-v2.png` },
+    },
   ],
 };
 
@@ -80,14 +144,16 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`${geist.variable} ${mono.variable} antialiased`}>
+      <body className={`${geist.variable} ${mono.variable} ${display.variable} antialiased`}>
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-full focus:border focus:border-accent focus:bg-bg focus:px-4 focus:py-2 focus:text-sm focus:text-text"
         >
           Skip to content
         </a>
+        <Grain />
         <ThemeSync />
+        <ScrollTop />
         <Shell />
         <main id="main">{children}</main>
         <Footer />

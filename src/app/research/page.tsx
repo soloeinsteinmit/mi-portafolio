@@ -1,29 +1,31 @@
-import type { Metadata } from "next";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { PublicationCard } from "@/components/research/PublicationCard";
 import { publications, publicationGroups } from "@/content/publications";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Research",
   description:
     "First-author research on agentic self-healing for data and AI pipelines, and publications produced by the autonomous research systems I architected.",
-};
+  path: "/research",
+});
 
 export default function ResearchPage() {
   return (
     <>
       <PageHeader
         eyebrow="Research"
-        title="Reliability, agency, and the line between them."
-        intro="My research interest is narrow and stubborn: what can an automated system be trusted to conclude, and what must still be approved by a person? The first-author work below comes straight out of production incident response. The rest is what an intelligent system produced once it was pointed at real scientific problems."
+        art="interference"
+        figure="Fig. 03 — two sources, one pattern"
+        title="Into the unknown🙂..."
+        intro="On the limits of what a machine may conclude."
         meta={
           <dl className="flex flex-wrap gap-x-10 gap-y-4">
             {[
               { k: "Publications", v: String(publications.length) },
-              { k: "First author", v: "1" },
-              { k: "Focus", v: "Reliable & agentic systems" },
+              { k: "Fields", v: "AI · ML · LLMs · Financial ML · Physical AI" },
             ].map((s) => (
               <div key={s.k}>
                 <dt className="label mb-1">{s.k}</dt>

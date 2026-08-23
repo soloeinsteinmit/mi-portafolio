@@ -87,7 +87,6 @@ export function GalleryGrid() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="h-auto w-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.03]"
                 />
-                <span className="pointer-events-none absolute inset-0 bg-gradient-to-t from-bg/70 via-transparent to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
               </span>
               <span className="flex items-start justify-between gap-3 p-3.5">
                 <span className="pretty text-[13px] leading-snug text-muted">

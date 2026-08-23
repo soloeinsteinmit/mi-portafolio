@@ -14,13 +14,10 @@ export const experience: Experience[] = [
     location: "Karlsruhe, Germany · Remote",
     period: "Jan 2026 — Present",
     summary:
-      "Sitting between data scientists and production: moving completed ML work into operable systems, and keeping the data and model workflows behind them running.",
+      "Sitting between data scientists and production: moving completed ML work into operable systems, and keeping them running.",
     bullets: [
-      "Support and improve production ML workflows across multiple concurrent data-science projects and teams.",
-      "Monitor production pipelines, investigate workflow failures and perform root-cause analysis across orchestration, dependencies, infrastructure and deployment.",
-      "Contributed to an internal opinionated Python framework that standardises how engineers define and operate data jobs, with reusable abstractions over orchestration, observability and cloud infrastructure.",
-      "Embed validation, retries, alerting, observability and documentation into platform workflows.",
-      "Support deployment paths and build and maintain monitoring for running production systems.",
+      "Production ML and data workflows across multiple teams — deployment, observability, incident investigation.",
+      "Contributed to an internal Python framework that standardises how engineers define and operate data jobs.",
     ],
     stack: [
       "Python",
@@ -49,11 +46,10 @@ export const experience: Experience[] = [
     summary:
       "Building the ML and intelligence layer for FX-risk decision support for African businesses.",
     bullets: [
-      "Developing a market-regime and maturity-risk system combining deterministic quantitative risk calculations, a historical-ML challenger and an LLM context/validation layer.",
-      "Developing a multi-horizon African-currency forecasting system with an XGBoost/LightGBM ensemble, benchmarkable alternatives and an LLM news/context layer across 7/30/60/90-day horizons.",
-      "Built the benchmarking loop that evaluates candidate surfaces against matured outcomes, with promotion kept as a deliberate manual decision.",
+      "A market-regime engine and a multi-horizon forecasting system, both in active development.",
+      "Deterministic baseline, ML challenger in shadow, LLM context layer — benchmarked before anything is promoted.",
     ],
-    stack: ["Python", "XGBoost", "LightGBM", "MLflow", "Prefect", "FastAPI", "Supabase", "Next.js"],
+    stack: ["Python", "AWS", "MLflow", "Prefect", "FastAPI", "Supabase", "PostgreSQL", "Docker"],
     weight: 1,
     relatedProjects: ["noeud-fx-intelligence"],
   },
@@ -67,13 +63,10 @@ export const experience: Experience[] = [
     summary:
       "Architected autonomous, tool-using research systems and the distributed infrastructure they run on.",
     bullets: [
-      "Built the Moremi Deep Research Agent for autonomous, multi-step research workflows.",
-      "Architected the Moremi Bio autonomous agent, which became core technology across four co-authored 2025 publications.",
-      "Designed a containerised platform with Docker and FastAPI integrating 20+ heterogeneous C++, Python, Java and Perl tools.",
-      "Built distributed orchestration with Celery, RabbitMQ and Redis for long-running heterogeneous workloads, including runs processing 20,000+ protein/SMILES candidates.",
-      "Engineered Moremi Bio Co-Researcher, Moremi AI Agent and Moremi Search for production research workflows.",
+      "Moremi Bio — an autonomous research agent that became the core technology behind four co-authored publications.",
+      "The containerised platform and distributed execution layer underneath it, plus the public Co-Researcher agent.",
     ],
-    stack: ["Python", "Agentic AI", "LLMs", "Docker", "FastAPI", "Celery", "RabbitMQ", "Redis", "React"],
+    stack: ["Python", "Docker", "FastAPI", "Celery", "RabbitMQ", "Redis", "MongoDB", "React"],
     weight: 2,
     relatedProjects: ["moremi-intelligent-systems", "moremi-deep-research", "moremi-co-researcher"],
   },
@@ -89,11 +82,10 @@ export const experience: Experience[] = [
     summary:
       "Computer vision for crop stress detection, and the drone capture pipelines that fed it.",
     bullets: [
-      "Applied YOLO-based computer vision to crop stress and disease detection in real agricultural settings.",
-      "Managed drone-based data capture, mapping, annotation and model-data pipelines.",
-      "Trained farmers and agricultural officers to use AI-generated agronomic insights.",
+      "YOLO-based detection in real agricultural settings, with the drone capture and annotation pipelines behind it.",
+      "Trained the farmers and extension officers who had to act on the output.",
     ],
-    stack: ["Python", "YOLO", "Computer Vision", "Drone mapping"],
+    stack: ["Python", "PyTorch", "OpenCV", "Drone mapping"],
     weight: 2,
     relatedProjects: ["karaagro-cadi"],
   },

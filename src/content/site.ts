@@ -4,7 +4,7 @@ export const site = {
   role: "AI & Data Systems Engineer",
   positioning: "AI & Data Systems Engineer building reliable intelligent systems.",
   supporting:
-    "I work across production ML and data platforms, agentic systems, and applied research — on the unglamorous problem of making intelligent systems keep working once they meet real data and real infrastructure.",
+    "Production ML and data platforms, agentic systems, financial ML, and applied research.",
   location: "Accra, Ghana",
   email: "solomoneshun373@gmail.com",
   url: "https://solomoneshun.vercel.app",
@@ -24,26 +24,24 @@ export const site = {
     { label: "Work", href: "/work" },
     { label: "Research", href: "/research" },
     { label: "Experience", href: "/experience" },
-    { label: "Writing", href: "/writing" },
     { label: "Talks", href: "/talks" },
-    { label: "About", href: "/about" },
+    { label: "Writing", href: "/writing" },
+    { label: "Gallery", href: "/gallery" },
   ],
   footerNav: [
-    { label: "Selected Work", href: "/work" },
+    { label: "Work", href: "/work" },
     { label: "Research", href: "/research" },
     { label: "Experience", href: "/experience" },
+    { label: "Talks", href: "/talks" },
     { label: "Writing", href: "/writing" },
-    { label: "Talks & Community", href: "/talks" },
-    { label: "Field Notes", href: "/gallery" },
-    { label: "About", href: "/about" },
-    { label: "Contact", href: "/contact" },
+    { label: "Gallery", href: "/gallery" },
   ],
 } as const;
 
 export const seo = {
-  title: "Solomon Eshun | AI & Data Systems Engineer",
+  title: "Solomon Eshun — AI, ML & Data Systems Engineer",
   description:
-    "AI and data systems engineer working across production ML, data engineering, agentic AI, open-source systems, and applied research.",
+    "Portfolio of Solomon Eshun, an AI, ML and data systems engineer building production platforms, agentic systems, open-source infrastructure and applied research.",
   keywords: [
     "AI engineer",
     "MLOps engineer",
@@ -51,6 +49,9 @@ export const seo = {
     "agentic AI",
     "self-healing pipelines",
     "machine learning research",
+    "AI systems engineer Ghana",
+    "open-source AI infrastructure",
+    "financial machine learning",
     "Solomon Eshun",
   ],
 };

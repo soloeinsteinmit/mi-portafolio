@@ -1,23 +1,26 @@
-import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Section } from "@/components/ui/Section";
 import { Reveal } from "@/components/ui/Reveal";
 import { Timeline } from "@/components/sections/Timeline";
+import { TechIcon } from "@/components/ui/TechIcon";
 import { experience, education } from "@/content/experience";
 import { certifications } from "@/content/certifications";
 import { skills } from "@/content/skills";
 import { site } from "@/content/site";
+import { pageMetadata } from "@/lib/metadata";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Experience",
   description:
     "Production MLOps and data platform engineering at EnBW via Ishango.ai, founding ML engineering at Noeud, and intelligent systems work at MinoHealth AI Labs.",
-};
+  path: "/experience",
+});
 
 const DEPTH_STYLE = {
-  core: "border-accent/40 bg-accent-soft text-text",
-  working: "border-border bg-surface-2 text-muted",
-  familiar: "border-border/70 bg-transparent text-faint",
+  core: "text-text",
+  working: "text-muted",
+  familiar: "text-faint",
 } as const;
 
 export default function ExperiencePage() {
@@ -25,8 +28,10 @@ export default function ExperiencePage() {
     <>
       <PageHeader
         eyebrow="Experience"
-        title="Production systems, research, and the road between them."
-        intro="Roles are weighted by what they demonstrate now, not by how long ago they happened. Current work expands; earlier work compresses."
+        art="spectrum"
+        figure="Fig. 04 — signal, resolved over time"
+        title="Talk is cheap. Show me the code💻."
+        intro="The places where models, pipelines, and platforms had to work for real."
       />
 
       <Section>
@@ -51,23 +56,46 @@ export default function ExperiencePage() {
           <Reveal delay={1}>
             <h2 className="label mb-5">Certification</h2>
             {certifications.map((c) => (
-              <div key={c.name} className="rounded-xl border border-border bg-surface p-6">
-                <div className="mb-3 inline-flex items-center gap-1.5 rounded-full border border-[var(--ok)]/30 px-2.5 py-1 font-mono text-[10px] tracking-[0.1em] text-[var(--ok)] uppercase">
-                  <span className="size-1.5 rounded-full bg-[var(--ok)]" />
-                  Verified
+              <div
+                key={c.name}
+                className="overflow-hidden rounded-xl border border-border bg-surface"
+              >
+                {c.image ? (
+                  <div className="relative aspect-[16/9] border-b border-border bg-surface-2">
+                    <Image
+                      src={c.image}
+                      alt={c.name}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 400px"
+                      className="object-contain p-4"
+                    />
+                  </div>
+                ) : null}
+                <div className="p-6">
+                  <p className="text-[16px] leading-snug font-medium text-text">{c.name}</p>
+                  <p className="mt-2 font-mono text-[11px] text-faint">
+                    {c.issuer} · Issued {c.issued}
+                    {c.expires ? ` · Valid through ${c.expires}` : ""}
+                  </p>
+                  {c.credentialId ? (
+                    <p className="mt-1 font-mono text-[11px] text-faint">
+                      Credential ID {c.credentialId}
+                    </p>
+                  ) : null}
+                  {c.note ? <p className="mt-3 text-[14px] text-muted">{c.note}</p> : null}
+                  {c.credentialUrl ? (
+                    <a
+                      href={c.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block font-mono text-[11.5px] text-accent transition-colors hover:text-accent-hover"
+                    >
+                      verify credential ↗
+                    </a>
+                  ) : null}
                 </div>
-                <p className="text-[16px] leading-snug font-medium text-text">{c.name}</p>
-                <p className="mt-2 font-mono text-[11px] text-faint">
-                  {c.issuer} · Issued {c.issued}
-                  {c.expires ? ` · Valid through ${c.expires}` : ""}
-                </p>
-                {c.note ? <p className="mt-3 text-[14px] text-muted">{c.note}</p> : null}
               </div>
             ))}
-            <p className="mt-4 text-[13px] leading-relaxed text-faint">
-              Only issued credentials are listed. Nothing planned or in progress
-              appears here.
-            </p>
           </Reveal>
         </div>
       </Section>
@@ -76,21 +104,25 @@ export default function ExperiencePage() {
         <Reveal className="mb-10">
           <h2 className="text-2xl font-semibold tracking-tight text-text">Capabilities</h2>
           <p className="mt-2 max-w-2xl text-[15px] text-muted">
-            Grouped by where the depth actually is. Filled chips are what I work
-            in regularly; the rest are real but lighter.
+            Grouped by where the depth actually is.
           </p>
         </Reveal>
         <div className="grid gap-8 md:grid-cols-2">
           {skills.map((group, i) => (
             <Reveal key={group.name} delay={i} className="rounded-xl border border-border bg-surface p-6">
               <h3 className="label mb-4">{group.name}</h3>
-              <ul className="flex flex-wrap gap-1.5">
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5 sm:grid-cols-3">
                 {group.items.map((s) => (
                   <li
                     key={s.name}
-                    className={`rounded border px-2.5 py-1 text-[12.5px] ${DEPTH_STYLE[s.depth]}`}
+                    className={`flex items-center gap-2 text-[13px] ${DEPTH_STYLE[s.depth]}`}
+                    title={s.depth === "core" ? "Core" : s.depth === "working" ? "Working" : "Familiar"}
                   >
-                    {s.name}
+                    <TechIcon
+                      name={s.name}
+                      className={`size-4 ${s.depth === "familiar" ? "opacity-50" : ""}`}
+                    />
+                    <span className="truncate">{s.name}</span>
                   </li>
                 ))}
               </ul>

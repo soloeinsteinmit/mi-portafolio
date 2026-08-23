@@ -1,4 +1,3 @@
-import Link from "next/link";
 import type { Publication } from "@/content/types";
 import { getProject } from "@/content/projects";
 import { Reveal } from "@/components/ui/Reveal";
@@ -13,6 +12,7 @@ export function PublicationCard({
   index: number;
 }) {
   const related = pub.relatedProject ? getProject(pub.relatedProject) : undefined;
+  const relatedHref = related?.links?.find((l) => l.href.startsWith("http"))?.href;
 
   return (
     <Reveal
@@ -56,13 +56,15 @@ export function PublicationCard({
         >
           {pub.doiLabel} ↗
         </a>
-        {related ? (
-          <Link
-            href={`/work/${related.slug}`}
+        {relatedHref ? (
+          <a
+            href={relatedHref}
+            target="_blank"
+            rel="noopener noreferrer"
             className="text-faint transition-colors hover:text-text"
           >
-            System: {related.title} →
-          </Link>
+            System: {related!.title} ↗
+          </a>
         ) : null}
         {pub.extraLinks?.map((l) => (
           <a
