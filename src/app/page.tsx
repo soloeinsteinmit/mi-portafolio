@@ -96,22 +96,35 @@ export default function Home() {
             <Reveal>
               <h3 className="label mb-4">Certification</h3>
               {certifications.map((c) => (
-                <div key={c.name} className="rounded-xl border border-border bg-surface p-5">
-                  <p className="text-[15px] leading-snug font-medium text-text">{c.name}</p>
-                  <p className="mt-2 font-mono text-[11px] text-faint">
-                    {c.issuer} · {c.issued}
-                    {c.expires ? ` — ${c.expires}` : ""}
-                  </p>
-                  {c.credentialUrl ? (
-                    <a
-                      href={c.credentialUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-block font-mono text-[11px] text-accent transition-colors hover:text-accent-hover"
-                    >
-                      verify ↗
-                    </a>
+                <div key={c.name} className="overflow-hidden rounded-xl border border-border bg-surface">
+                  {c.image ? (
+                    <div className="relative aspect-[4/3] border-b border-border bg-[#f7f5f2]">
+                      <Image
+                        src={c.image}
+                        alt={`${c.name} certificate issued to Solomon Eshun`}
+                        fill
+                        sizes="260px"
+                        className="object-contain p-2"
+                      />
+                    </div>
                   ) : null}
+                  <div className="p-5">
+                    <p className="text-[15px] leading-snug font-medium text-text">{c.name}</p>
+                    <p className="mt-2 font-mono text-[11px] text-faint">
+                      {c.issuer} · {c.issued}
+                      {c.expires ? ` — ${c.expires}` : ""}
+                    </p>
+                    {c.credentialUrl ? (
+                      <a
+                        href={c.credentialUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-3 inline-block font-mono text-[11px] text-accent transition-colors hover:text-accent-hover"
+                      >
+                        verify ↗
+                      </a>
+                    ) : null}
+                  </div>
                 </div>
               ))}
               <Link

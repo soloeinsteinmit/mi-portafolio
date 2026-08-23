@@ -39,8 +39,8 @@ export default function ExperiencePage() {
       </Section>
 
       <Section className="border-y border-border bg-surface/40">
-        <div className="grid gap-12 md:grid-cols-2 md:gap-16">
-          <Reveal>
+        <div>
+          <Reveal className="max-w-3xl">
             <h2 className="label mb-5">Education</h2>
             <h3 className="text-xl font-semibold text-text">{education.institution}</h3>
             <p className="mt-1.5 text-[15px] text-muted">{education.degree}</p>
@@ -53,25 +53,36 @@ export default function ExperiencePage() {
             </p>
           </Reveal>
 
-          <Reveal delay={1}>
-            <h2 className="label mb-5">Certification</h2>
+          <div id="certifications" className="mt-14 scroll-mt-28 border-t border-border pt-10">
+            <Reveal className="mb-7 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
+              <div>
+                <h2 className="text-2xl font-semibold tracking-tight text-text">Certifications</h2>
+                <p className="mt-2 max-w-xl text-[14.5px] text-muted">
+                  Verified credentials, added when they are issued.
+                </p>
+              </div>
+              <p className="label">Databricks certification path</p>
+            </Reveal>
+
+            <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
             {certifications.map((c) => (
-              <div
+              <Reveal
                 key={c.name}
-                className="overflow-hidden rounded-xl border border-border bg-surface"
+                as="article"
+                className="flex h-full flex-col overflow-hidden rounded-xl border border-border bg-surface"
               >
                 {c.image ? (
-                  <div className="relative aspect-[16/9] border-b border-border bg-surface-2">
+                  <div className="relative aspect-[4/3] border-b border-border bg-[#f7f5f2]">
                     <Image
                       src={c.image}
-                      alt={c.name}
+                      alt={`${c.name} certificate issued to Solomon Eshun`}
                       fill
-                      sizes="(max-width: 768px) 100vw, 400px"
-                      className="object-contain p-4"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                      className="object-contain p-3"
                     />
                   </div>
                 ) : null}
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <p className="text-[16px] leading-snug font-medium text-text">{c.name}</p>
                   <p className="mt-2 font-mono text-[11px] text-faint">
                     {c.issuer} · Issued {c.issued}
@@ -88,15 +99,16 @@ export default function ExperiencePage() {
                       href={c.credentialUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-4 inline-block font-mono text-[11.5px] text-accent transition-colors hover:text-accent-hover"
+                      className="mt-auto inline-block pt-5 font-mono text-[11.5px] text-accent transition-colors hover:text-accent-hover"
                     >
                       verify credential ↗
                     </a>
                   ) : null}
                 </div>
-              </div>
+              </Reveal>
             ))}
-          </Reveal>
+            </div>
+          </div>
         </div>
       </Section>
 

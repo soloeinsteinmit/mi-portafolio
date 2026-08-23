@@ -14,6 +14,7 @@ export const certifications: Certification[] = [
     credentialUrl:
       "https://credentials.databricks.com/cfb933ea-691c-41ef-bc2f-196cf568008a",
     credentialId: "183882941",
+    image: "/certifications/databricks-data-engineer-professional.png",
     note: "Advanced data engineering on the Databricks platform.",
   },
 ];
