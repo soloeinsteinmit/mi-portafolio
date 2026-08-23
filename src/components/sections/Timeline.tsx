@@ -64,7 +64,7 @@ export function Timeline({ items }: { items: Experience[] }) {
             {item.location}
           </div>
 
-          <div className="mt-2 flex items-start gap-3.5 sm:gap-4">
+          <div className="mt-2 flex min-w-0 items-center gap-2.5">
             {item.logo ? (
               item.orgUrl ? (
                 <a
@@ -72,49 +72,49 @@ export function Timeline({ items }: { items: Experience[] }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`Visit ${item.organisation}`}
-                  className="relative mt-0.5 h-12 w-14 shrink-0 overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-transform hover:-translate-y-0.5 sm:w-16"
+                  className="relative h-7 w-9 shrink-0 transition-opacity hover:opacity-70"
                 >
                   <Image
                     src={item.logo}
                     alt={`${item.organisation} logo`}
                     fill
-                    sizes="64px"
-                    className="object-contain p-2"
+                    sizes="36px"
+                    className="object-contain object-left"
                   />
                 </a>
               ) : (
-                <div className="relative mt-0.5 h-12 w-14 shrink-0 overflow-hidden rounded-xl border border-border bg-white shadow-sm sm:w-16">
+                <div className="relative h-7 w-9 shrink-0">
                   <Image
                     src={item.logo}
                     alt={`${item.organisation} logo`}
                     fill
-                    sizes="64px"
-                    className="object-contain p-2"
+                    sizes="36px"
+                    className="object-contain object-left"
                   />
                 </div>
               )
             ) : null}
 
-            <div className="min-w-0 flex-1">
-              <h3 className="flex flex-wrap items-baseline gap-x-2.5 text-lg font-semibold text-text md:text-xl">
-                {item.orgUrl ? (
-                  <a
-                    href={item.orgUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="transition-colors hover:text-accent"
-                  >
-                    {item.organisation}
-                  </a>
-                ) : (
-                  item.organisation
-                )}
-                {item.relationship ? (
-                  <span className="text-[13px] font-normal text-faint">
-                    {item.relationship}
-                  </span>
-                ) : null}
-              </h3>
+            <h3 className="flex min-w-0 flex-wrap items-baseline gap-x-2.5 text-lg font-semibold text-text md:text-xl">
+              {item.orgUrl ? (
+                <a
+                  href={item.orgUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-accent"
+                >
+                  {item.organisation}
+                </a>
+              ) : (
+                item.organisation
+              )}
+              {item.relationship ? (
+                <span className="text-[13px] font-normal text-faint">
+                  {item.relationship}
+                </span>
+              ) : null}
+            </h3>
+          </div>
 
           <ul className="mt-2.5 space-y-1">
             {item.roles.map((r) => (
@@ -150,7 +150,7 @@ export function Timeline({ items }: { items: Experience[] }) {
             </div>
           ) : null}
 
-              {item.relatedProjects?.length ? (
+          {item.relatedProjects?.length ? (
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
               {item.relatedProjects.map((slug) => {
                 const p = getProject(slug);
@@ -169,9 +169,7 @@ export function Timeline({ items }: { items: Experience[] }) {
                 );
               })}
             </div>
-              ) : null}
-            </div>
-          </div>
+          ) : null}
         </motion.li>
       ))}
     </ol>

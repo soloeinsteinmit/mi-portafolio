@@ -6,7 +6,7 @@ export const experience: Experience[] = [
     slug: "enbw",
     organisation: "EnBW Energie Baden-Württemberg AG",
     orgUrl: "https://www.enbw.com/company/",
-    logo: "/experience/logos/enbw.svg",
+    logo: "/experience/logos/enbw-mark.svg",
     relationship: "via Ishango.ai, London, UK",
     roles: [
       { title: "MLOps Engineer", period: "Mar 2026 — Present" },
@@ -111,6 +111,8 @@ export const experience: Experience[] = [
 
 export const education = {
   institution: "University of Cape Coast",
+  institutionUrl: "https://ucc.edu.gh/",
+  logo: "/experience/logos/ucc.png",
   location: "Cape Coast, Ghana",
   degree: "B.Ed. Computer Science",
   period: "2020 — 2024",

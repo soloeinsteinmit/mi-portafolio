@@ -42,7 +42,33 @@ export default function ExperiencePage() {
         <div>
           <Reveal className="max-w-3xl">
             <h2 className="label mb-5">Education</h2>
-            <h3 className="text-xl font-semibold text-text">{education.institution}</h3>
+            <div className="flex items-center gap-2.5">
+              <a
+                href={education.institutionUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Visit ${education.institution}`}
+                className="relative size-8 shrink-0 transition-opacity hover:opacity-70"
+              >
+                <Image
+                  src={education.logo}
+                  alt={`${education.institution} logo`}
+                  fill
+                  sizes="32px"
+                  className="object-contain"
+                />
+              </a>
+              <h3 className="text-xl font-semibold text-text">
+                <a
+                  href={education.institutionUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-accent"
+                >
+                  {education.institution}
+                </a>
+              </h3>
+            </div>
             <p className="mt-1.5 text-[15px] text-muted">{education.degree}</p>
             <p className="mt-1 font-mono text-[11px] text-faint">
               {education.period} · {education.location}
