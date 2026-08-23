@@ -82,7 +82,10 @@ export const metadata: Metadata = {
       "max-video-preview": -1,
     },
   },
-  icons: { icon: "/favicon.png", apple: "/favicon.png" },
+  icons: {
+    icon: [{ url: "/hero-favicon.ico", type: "image/x-icon" }],
+    apple: [{ url: "/favicon-hero.png", sizes: "512x512", type: "image/png" }],
+  },
   manifest: "/manifest.webmanifest",
 };
 
