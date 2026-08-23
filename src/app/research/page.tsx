@@ -19,7 +19,7 @@ export default function ResearchPage() {
         eyebrow="Research"
         art="interference"
         figure="Fig. 03 — two sources, one pattern"
-        title="Into the unknown🙂..."
+        title="Into the unknown🙂🌌."
         intro="On the limits of what a machine may conclude."
         meta={
           <dl className="flex flex-wrap gap-x-10 gap-y-4">
