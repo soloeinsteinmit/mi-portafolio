@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, useScroll, useSpring, useTransform } from "motion/react";
+import Image from "next/image";
 import { useRef } from "react";
 import type { Experience } from "@/content/types";
 import { getProject } from "@/content/projects";
@@ -63,25 +64,57 @@ export function Timeline({ items }: { items: Experience[] }) {
             {item.location}
           </div>
 
-          <h3 className="mt-2 flex flex-wrap items-baseline gap-x-2.5 text-lg font-semibold text-text md:text-xl">
-            {item.orgUrl ? (
-              <a
-                href={item.orgUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="transition-colors hover:text-accent"
-              >
-                {item.organisation}
-              </a>
-            ) : (
-              item.organisation
-            )}
-            {item.relationship ? (
-              <span className="text-[13px] font-normal text-faint">
-                {item.relationship}
-              </span>
+          <div className="mt-2 flex items-start gap-3.5 sm:gap-4">
+            {item.logo ? (
+              item.orgUrl ? (
+                <a
+                  href={item.orgUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Visit ${item.organisation}`}
+                  className="relative mt-0.5 h-12 w-14 shrink-0 overflow-hidden rounded-xl border border-border bg-white shadow-sm transition-transform hover:-translate-y-0.5 sm:w-16"
+                >
+                  <Image
+                    src={item.logo}
+                    alt={`${item.organisation} logo`}
+                    fill
+                    sizes="64px"
+                    className="object-contain p-2"
+                  />
+                </a>
+              ) : (
+                <div className="relative mt-0.5 h-12 w-14 shrink-0 overflow-hidden rounded-xl border border-border bg-white shadow-sm sm:w-16">
+                  <Image
+                    src={item.logo}
+                    alt={`${item.organisation} logo`}
+                    fill
+                    sizes="64px"
+                    className="object-contain p-2"
+                  />
+                </div>
+              )
             ) : null}
-          </h3>
+
+            <div className="min-w-0 flex-1">
+              <h3 className="flex flex-wrap items-baseline gap-x-2.5 text-lg font-semibold text-text md:text-xl">
+                {item.orgUrl ? (
+                  <a
+                    href={item.orgUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors hover:text-accent"
+                  >
+                    {item.organisation}
+                  </a>
+                ) : (
+                  item.organisation
+                )}
+                {item.relationship ? (
+                  <span className="text-[13px] font-normal text-faint">
+                    {item.relationship}
+                  </span>
+                ) : null}
+              </h3>
 
           <ul className="mt-2.5 space-y-1">
             {item.roles.map((r) => (
@@ -117,7 +150,7 @@ export function Timeline({ items }: { items: Experience[] }) {
             </div>
           ) : null}
 
-          {item.relatedProjects?.length ? (
+              {item.relatedProjects?.length ? (
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-1.5">
               {item.relatedProjects.map((slug) => {
                 const p = getProject(slug);
@@ -136,7 +169,9 @@ export function Timeline({ items }: { items: Experience[] }) {
                 );
               })}
             </div>
-          ) : null}
+              ) : null}
+            </div>
+          </div>
         </motion.li>
       ))}
     </ol>

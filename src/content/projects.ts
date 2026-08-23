@@ -62,7 +62,7 @@ export const projects: Project[] = [
   {
     slug: "lumis-sdk",
     title: "Lumis SDK",
-    tagline: "Diagnosis-as-Code — the open-source companion to the self-healing research",
+    tagline: "Agentic self-healing for data & AI pipelines",
     role: "Creator & maintainer",
     period: "2026 — Present",
     status: "pre-alpha",
@@ -70,7 +70,7 @@ export const projects: Project[] = [
     tier: 1,
     order: 3,
     summary:
-      "Deterministic-first, evidence-grounded incident diagnosis for data, ML and software pipelines. The open-source companion to the paper. Pre-alpha, built in public.",
+      "A vendor-agnostic, deterministic-first SDK for evidence-grounded diagnosis and guarded remediation across data and AI pipelines. Pre-alpha and built in public.",
     stack: ["Python", "PyPI", "Prefect", "Datadog", "Pydantic"],
     links: [
       { label: "lumis-sdk.vercel.app", href: "https://lumis-sdk.vercel.app/", kind: "site" },

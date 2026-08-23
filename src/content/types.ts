@@ -81,6 +81,8 @@ export type Experience = {
   slug: string;
   organisation: string;
   orgUrl?: string;
+  /** Optional locally stored mark sourced from the organisation's official site. */
+  logo?: string;
   /** e.g. "via Ishango.ai" — the delivery relationship, not the employer. */
   relationship?: string;
   roles: { title: string; period: string }[];

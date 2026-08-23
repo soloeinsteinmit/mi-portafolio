@@ -6,6 +6,7 @@ export const experience: Experience[] = [
     slug: "enbw",
     organisation: "EnBW Energie Baden-Württemberg AG",
     orgUrl: "https://www.enbw.com/company/",
+    logo: "/experience/logos/enbw.svg",
     relationship: "via Ishango.ai, London, UK",
     roles: [
       { title: "MLOps Engineer", period: "Mar 2026 — Present" },
@@ -38,6 +39,7 @@ export const experience: Experience[] = [
     slug: "noeud",
     organisation: "Noeud",
     orgUrl: "https://www.getnoeud.com/",
+    logo: "/experience/logos/noeud.png",
     roles: [
       { title: "Founding Machine Learning Engineer (R&D)", period: "Oct 2025 — Present" },
     ],
@@ -57,6 +59,7 @@ export const experience: Experience[] = [
     slug: "minohealth",
     organisation: "MinoHealth AI Labs",
     orgUrl: "https://minohealth.ai/",
+    logo: "/experience/logos/minohealth.png",
     roles: [{ title: "Machine Learning Engineer", period: "Oct 2024 — Dec 2025" }],
     location: "Accra, Ghana",
     period: "Oct 2024 — Dec 2025",
@@ -74,6 +77,7 @@ export const experience: Experience[] = [
     slug: "karaagro",
     organisation: "KaraAgro AI",
     orgUrl: "https://karaagro.com/",
+    logo: "/experience/logos/karaagro.png",
     roles: [
       { title: "AI/ML Engineer & Drone Piloting/Mapping Engineer", period: "Jan 2025 — Oct 2025" },
     ],
@@ -92,6 +96,8 @@ export const experience: Experience[] = [
   {
     slug: "global-code",
     organisation: "Global Code",
+    orgUrl: "https://globalcode.org.uk/",
+    logo: "/experience/logos/global-code.png",
     roles: [{ title: "Instructor", period: "Aug 2025 — Sep 2025" }],
     location: "University of Cape Coast, Ghana",
     period: "2025",

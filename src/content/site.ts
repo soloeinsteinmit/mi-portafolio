@@ -8,7 +8,7 @@ export const site = {
   email: "solomoneshun373@gmail.com",
   url: "https://solomoneshun.vercel.app",
   cv: "/SolomonEshun_Resume_AI_ML_Engineer.pdf",
-  currentlyBuilding: "Lumis SDK — Diagnosis-as-Code for data & AI pipelines",
+  currentlyBuilding: "Lumis SDK — agentic self-healing for data & AI pipelines",
   socials: [
     { label: "GitHub", handle: "soloshun", href: "https://github.com/soloshun" },
     {
