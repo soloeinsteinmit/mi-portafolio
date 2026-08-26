@@ -3,6 +3,24 @@ import type { Talk } from "./types";
 /** High-signal items only. Wording matches the evidence: presenter, not invited speaker. */
 export const talks: Talk[] = [
   {
+    image: "/talks/building-working-age-ai-innovotech-2026.png",
+    title: "Building and Working in the Age of AI: Ask Me Anything",
+    role: "Guest Speaker",
+    organisation: "InnovoTech Lab",
+    venue: "Online",
+    date: "22 Aug 2026",
+    year: 2026,
+    summary:
+      "A practical AMA on how AI is reshaping software and data engineering — and why programming, mathematics and logical reasoning remain non-negotiable foundations in the AI era. The session also explored building AI products around real customer problems, production AI, agents and MLOps, physical AI and robotics, and opportunities in African languages and local challenges.",
+    links: [
+      {
+        label: "Watch full recording",
+        href: "https://www.youtube.com/watch?v=-Vb-nwC7uEc",
+        kind: "video",
+      },
+    ],
+  },
+  {
     image: "/gallery/indaba2026_1.jpeg",
     title: "Building Useful AI Agents with Agno + OpenRouter",
     role: "Workshop Presenter",

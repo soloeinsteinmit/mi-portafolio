@@ -9,7 +9,7 @@ import { pageMetadata } from "@/lib/metadata";
 export const metadata = pageMetadata({
   title: "Talks & Community",
   description:
-    "Workshops, teaching and community work by Solomon Eshun, including the Agno + OpenRouter AI agents workshop at IndabaX Ghana.",
+    "Talks, workshops and teaching by Solomon Eshun on building in the age of AI, production agents, MLOps and applied machine learning.",
   path: "/talks",
 });
 
