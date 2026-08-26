@@ -15,8 +15,8 @@ export default function GalleryPage() {
     <>
       <PageHeader
         eyebrow="Gallery"
-        art="diffusion"
-        figure="Fig. 07 — the field, literally"
+        art="constellation"
+        figure="Fig. 07 — observations, connected"
         title="Out in the world🌍."
         intro="Sites, sessions, and a considerable amount of work conducted at unreasonable hours."
       />

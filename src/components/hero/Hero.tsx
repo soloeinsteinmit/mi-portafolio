@@ -38,9 +38,18 @@ export function Hero() {
             </p>
 
             <h1 className="display mt-4 text-[clamp(3.2rem,10vw,7rem)] leading-[0.88] font-normal tracking-[-0.03em] text-text">
-              A search into
+              In search of
               <br />
-              the <span className="italic text-accent">unknown</span>
+              the{" "}
+              <span className="unknown-word italic text-accent">
+                unknown
+                <span aria-hidden className="unknown-trace">
+                  <span className="unknown-particle" />
+                </span>
+                <span aria-hidden className="unknown-equation">
+                  Δx · Δp ≥ ℏ / 2
+                </span>
+              </span>
             </h1>
 
             <p className="pretty mt-8 max-w-md text-[15px] leading-relaxed text-muted">

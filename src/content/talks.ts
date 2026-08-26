@@ -18,6 +18,11 @@ export const talks: Talk[] = [
         href: "https://www.youtube.com/watch?v=-Vb-nwC7uEc",
         kind: "video",
       },
+      {
+        label: "LinkedIn recap",
+        href: "https://lnkd.in/p/duuUNmMC",
+        kind: "post",
+      },
     ],
   },
   {
