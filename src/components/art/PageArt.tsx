@@ -10,7 +10,7 @@ export type ArtVariant =
   | "spectrum" // experience — signal resolved over time
   | "radial" // talks — something propagating outward
   | "diffusion" // writing — ink finding its shape
-  | "constellation"; // gallery — observations becoming a connected field
+  | "galaxy"; // gallery — a disc of observations, slowly turning
 
 /**
  * One canvas engine, six figures.
@@ -320,64 +320,74 @@ export function PageArt({
       }
     };
 
-    /** Drifting observations that briefly resolve into a connected field. */
-    const observations: { x: number; y: number; vx: number; vy: number; z: number }[] = [];
-    const constellation = () => {
-      if (!observations.length) {
-        for (let i = 0; i < 48; i++) {
-          observations.push({
-            x: Math.random() * w,
-            y: Math.random() * h,
-            vx: (Math.random() - 0.5) * 0.16,
-            vy: (Math.random() - 0.5) * 0.12,
+    /**
+     * A tilted spiral disc. Stars sit on two logarithmic arms, denser toward
+     * the core, and shear as they turn — inner orbits faster than outer, the
+     * way a real disc does. No links between points: this is a field of
+     * observations, not a network.
+     */
+    const stars: {
+      r: number;
+      th: number;
+      om: number;
+      z: number;
+      hot: boolean;
+    }[] = [];
+
+    const galaxy = () => {
+      const cx = w * 0.58;
+      const cy = h * 0.5;
+      const maxR = Math.max(w, h) * 0.52;
+
+      if (!stars.length) {
+        const ARMS = 2;
+        for (let i = 0; i < 460; i++) {
+          // sqrt-biased radius packs more stars near the centre
+          const f = Math.pow(Math.random(), 0.62);
+          const r = 14 + f * maxR;
+          const spread = (1 - f * 0.6) * 0.85;
+          const th =
+            ((i % ARMS) / ARMS) * Math.PI * 2 +
+            Math.log(r / 10) * 2.0 +
+            (Math.random() - 0.5) * spread;
+          stars.push({
+            r,
+            th,
+            om: 0.55 / Math.sqrt(r / maxR + 0.1), // differential rotation
             z: Math.random(),
+            hot: Math.random() < 0.05,
           });
         }
       }
 
-      const reach = Math.min(190, w * 0.18);
-      for (const p of observations) {
-        p.x += p.vx * (0.45 + p.z);
-        p.y += p.vy * (0.45 + p.z);
+      // core bloom
+      const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, maxR * 0.5);
+      g.addColorStop(0, c.node);
+      g.addColorStop(1, "transparent");
+      ctx.globalAlpha = 0.05 * intensity;
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(cx, cy, maxR * 0.7, maxR * 0.3, 0, 0, Math.PI * 2);
+      ctx.fill();
 
-        const pd = Math.hypot(p.x - ptr.x, p.y - ptr.y);
-        if (pd < 170 && pd > 1) {
-          const pull = (1 - pd / 170) * ptr.k * 0.22;
-          p.x += ((ptr.x - p.x) / pd) * pull;
-          p.y += ((ptr.y - p.y) / pd) * pull;
-        }
+      for (const s of stars) {
+        s.th += s.om * 0.0016;
 
-        if (p.x < -12) p.x = w + 12;
-        if (p.x > w + 12) p.x = -12;
-        if (p.y < -12) p.y = h + 12;
-        if (p.y > h + 12) p.y = -12;
-      }
+        const x = cx + Math.cos(s.th) * s.r * 1.32;
+        const y = cy + Math.sin(s.th) * s.r * 0.46;
 
-      for (let i = 0; i < observations.length; i++) {
-        const a = observations[i];
-        for (let j = i + 1; j < observations.length; j++) {
-          const b = observations[j];
-          const d = Math.hypot(a.x - b.x, a.y - b.y);
-          if (d >= reach) continue;
-          const hot = (i * 7 + j * 11) % 29 === 0;
-          ctx.beginPath();
-          ctx.moveTo(a.x, a.y);
-          ctx.lineTo(b.x, b.y);
-          ctx.strokeStyle = hot ? c.accent : c.line;
-          ctx.globalAlpha = (1 - d / reach) * (hot ? 0.75 : 0.42) * intensity;
-          ctx.lineWidth = hot ? 1.2 : 0.8;
-          ctx.stroke();
-        }
-      }
+        const twinkle = 0.72 + Math.sin(t * 1.6 + s.z * 12) * 0.28;
+        const near =
+          Math.exp(-((Math.hypot(x - ptr.x, y - ptr.y) / 165) ** 2)) * ptr.k;
 
-      observations.forEach((p, i) => {
-        const hot = i % 13 === 0;
+        const rad = (0.5 + s.z * 1.25) * (1 + near * 1.4);
         ctx.beginPath();
-        ctx.arc(p.x, p.y, hot ? 2.5 : 1 + p.z * 1.25, 0, Math.PI * 2);
-        ctx.fillStyle = hot ? c.accent : c.node;
-        ctx.globalAlpha = (hot ? 0.85 : 0.32 + p.z * 0.35) * intensity;
+        ctx.arc(x, y, rad, 0, Math.PI * 2);
+        ctx.fillStyle = s.hot ? c.accent : c.node;
+        ctx.globalAlpha =
+          Math.min(1, (0.1 + s.z * 0.42) * twinkle + near * 0.75) * intensity;
         ctx.fill();
-      });
+      }
     };
 
     const FIGURES = {
@@ -388,7 +398,7 @@ export function PageArt({
       spectrum,
       radial,
       diffusion,
-      constellation,
+      galaxy,
     };
 
     const draw = () => {

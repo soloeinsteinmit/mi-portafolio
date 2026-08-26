@@ -203,34 +203,12 @@ body {
   text-wrap: pretty;
 }
 
-/* A quiet measurement trace beneath the hero's final word. The equation is
-   contextual texture; the headline itself stays stable and fully readable. */
+/* The headline stays plain. The uncertainty relation sits under it as quiet
+   contextual texture — no underline, no motion on the word itself. */
 .unknown-word {
   position: relative;
   display: inline-block;
   padding-right: 0.035em;
-}
-
-.unknown-trace {
-  position: absolute;
-  right: 0.04em;
-  bottom: -0.09em;
-  left: 0.04em;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, currentColor 18%, currentColor 82%, transparent);
-  opacity: 0.38;
-}
-
-.unknown-particle {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 5px;
-  height: 5px;
-  border-radius: 999px;
-  background: currentColor;
-  box-shadow: 0 0 12px color-mix(in srgb, currentColor 80%, transparent);
-  transform: translateY(-50%);
 }
 
 .unknown-equation {
@@ -249,20 +227,9 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .unknown-particle {
-    animation: unknown-measure 5.8s var(--ease-out-expo) infinite;
-  }
-
   .unknown-equation {
     animation: uncertainty-reading 5.8s ease-in-out infinite;
   }
-}
-
-@keyframes unknown-measure {
-  0%, 12% { left: 0; opacity: 0; }
-  20% { opacity: 1; }
-  68% { left: calc(100% - 5px); opacity: 1; }
-  78%, 100% { left: calc(100% - 5px); opacity: 0; }
 }
 
 @keyframes uncertainty-reading {

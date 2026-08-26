@@ -43,9 +43,6 @@ export function Hero() {
               the{" "}
               <span className="unknown-word italic text-accent">
                 unknown
-                <span aria-hidden className="unknown-trace">
-                  <span className="unknown-particle" />
-                </span>
                 <span aria-hidden className="unknown-equation">
                   Δx · Δp ≥ ℏ / 2
                 </span>
